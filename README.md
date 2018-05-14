@@ -28,22 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
-
-
-## Load Sample Data
-
-    ` npm install -g json-server `
-
-    ` json-server data/db.json `
-
-    ` npm install faker lodash --save-dev`
-
-
-
-    - if json-server is closed will lose data that is in memory, BUT if run ` s ` in console before closing server, a snapshot will be created
-
-    run ` json-server contacts.js `
-
 ## Update Angular while running Server
 
     - in one terminal run ` ng build --watch `
