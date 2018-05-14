@@ -1,1 +1,148 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+
+body{
+  /* background-color: #716671; */
+  background-position: center;
+  background-image: url("./assets/images/header.jpg");
+  background-size: cover no-repeat;
+
+
+}
+
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+	color: #af0404;
+}
+
+.active[_ngcontent-c1] {
+    background-color: #b1a7a7;
+    border: 1px solid #7b7563;
+    border-radius: 4px;
+}
+
+.column1{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-column{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-detail, .btn-edit{
+  margin-right: .5rem;
+}
+h1 ,h6{
+  color: beige;
+}
+
+h2{
+  color: #62d653;
+}
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    margin-top: 6rem;
+
+}
+
+
+.contactlist {
+    margin-top: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+.contactEdit{
+  margin-top: 7rem;
+  /* margin-left: auto; */
+  margin-right: 20%;
+  /* width: 70vw; */
+}
+
+.contactDetail{
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  padding-top:6rem;
+  margin: 0 auto;
+}
+
+form{
+  margin: 0 auto;
+}
+.title a, label{
+  color: #ef8618;
+}
+
+a.button.is-text{
+  color: #e9f1f9;
+}
+
+ .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #ecf0f5;
+    color: #ecf0f5;
+}
+
+.back, .create{
+  border: 2px solid #e01005;
+  border-radius: 4px;
+  display: block;
+  width: 80vw;
+  margin:  2rem 0rem;
+  background-color: #ad8565;
+  color: beige
+
+
+}
+table thead th{
+  color: #ece5d9;
+}
+
+input{
+  width: 80vw;
+}
+
+.detail-container{
+    border: 2px dashed red;
+    border-radius: 4px;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, .2);
+    max-width: 98vw;
+
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 25px;
+  }
+  h2{
+    font-size: 20px;
+  }
+  .btn-detail{
+    margin-right: 7px;
+    margin-left: 7px;
+  }
+  .btn-column{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0rem;
+  }
+  section{
+    margin-bottom: 2rem;
+  }
+
+}
