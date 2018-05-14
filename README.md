@@ -55,7 +55,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     https://jsonlint.com/
 
-    ## Run/Start/Stop Docker Project
+
+## Run/Start/Stop Docker Project
 
         - ` docker-compose up `//from w/in project directory
 
