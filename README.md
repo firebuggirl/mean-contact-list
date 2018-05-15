@@ -122,3 +122,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## URI format Single-node plan:
 
     ` mongodb://dbuser:dbpass@host:port/dbname `
+
+    - test app
