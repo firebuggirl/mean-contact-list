@@ -111,7 +111,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     - change DB connection string in `routes/api.js` + in `data/load-sample-data.js`
 
-## URI format Single-node plan:
+## Add/push App:
 
     `  git add . `
 
