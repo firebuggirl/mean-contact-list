@@ -70,7 +70,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
         ` docker-compose logs `//get all associated activity for containers linked with this docker-compose
 
 
-
 ## Editing files in Docker shell
 
         ` docker exec -it <container> sh `//enter container shell
@@ -86,3 +85,40 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
         ` :w! `//write/save
 
         ` :q! ` //exit/quit Vim
+
+
+## Deploy To Heroku
+
+    - create `Procfile`
+
+    ` heroku login `
+
+    `  heroku create ang6-crud `
+
+    ` heroku git:remote -a ang6-crud `
+
+    `  heroku config:add NODE_ENV=production `
+
+    - add `Node Buildpack` via Heroku UI
+
+    `  git add . `//
+
+    ` git commit -m "ng build" `
+
+    ` git push -u origin master `
+
+    ` git push heroku master `
+
+# Note: Don't forget to add env variables via Heroku GUI
+
+## Add mLab/MongoDb as add on:
+
+    ` heroku addons:create mongolab `//creates connection string + auto-populates config variable via Heroku UI
+
+## Get connection URI:
+
+    ` heroku config:get MONGODB_URI `
+
+## URI format Single-node plan:
+
+    ` mongodb://dbuser:dbpass@host:port/dbname `
