@@ -101,25 +101,25 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     - add `Node Buildpack` via Heroku UI
 
-## Add mLab/MongoDb as add on:
+    * Add mLab/MongoDb as add on:
 
-    ` heroku addons:create mongolab `//creates connection string + auto-populates config variable via Heroku UI
+        ` heroku addons:create mongolab `//creates connection string + auto-populates config variable via Heroku UI
 
-## Get connection URI:
+    * Get connection URI:
 
-    ` heroku config:get MONGODB_URI `
+        ` heroku config:get MONGODB_URI `
 
-    - change DB connection string in `routes/api.js` + in `data/load-sample-data.js`
+        - change DB connection string in `routes/api.js` + in `data/load-sample-data.js`
 
-## Add/push App:
+    * Add/push App:
 
-    `  git add . `
+        `  git add . `
 
-    ` git commit -m "ng build" `
+        ` git commit -m "ng build" `
 
-    ` git push -u origin master `
+        ` git push -u origin master `
 
-    ` git push heroku master `
+        ` git push heroku master `
 
 # Note: Don't forget to add any additional env variables via Heroku GUI
 
