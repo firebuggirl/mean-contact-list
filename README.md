@@ -101,16 +101,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     - add `Node Buildpack` via Heroku UI
 
-    `  git add . `//
-
-    ` git commit -m "ng build" `
-
-    ` git push -u origin master `
-
-    ` git push heroku master `
-
-# Note: Don't forget to add env variables via Heroku GUI
-
 ## Add mLab/MongoDb as add on:
 
     ` heroku addons:create mongolab `//creates connection string + auto-populates config variable via Heroku UI
@@ -119,8 +109,23 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     ` heroku config:get MONGODB_URI `
 
+    - change DB connection string in `routes/api.js` + in `data/load-sample-data.js`
+
 ## URI format Single-node plan:
 
-    ` mongodb://dbuser:dbpass@host:port/dbname `
+    `  git add . `
 
-    - test app
+    ` git commit -m "ng build" `
+
+    ` git push -u origin master `
+
+    ` git push heroku master `
+
+# Note: Don't forget to add any additional env variables via Heroku GUI
+
+
+## To do:
+
+    - Add search functionality
+
+    - Add authentication with Auth0
