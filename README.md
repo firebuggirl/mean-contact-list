@@ -178,6 +178,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
                   ` db.auth("newUser", "newPassword") `
 
+                  - add Auth0 variables to Heroku UI
+
 ## To do:
 
     - Add search functionality
