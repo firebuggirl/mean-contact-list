@@ -123,6 +123,60 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Note: Don't forget to add any additional env variables via Heroku GUI
 
+## Enable Auth locally
+
+      ` mongod --port 27017  `
+
+      ` mongo `
+
+      ` use admin `
+
+      `  db.createUser(
+            {
+              user: "myUserAdmin",
+              pwd: "password",
+              roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+            }
+          ) `
+
+          - Disconnect the mongo shell.
+
+    - restart:
+
+    ` mongod --auth  `
+
+    ` mongo -u "myUserAdmin" -p "password" --authenticationDatabase "admin" `
+
+
+      ` use admin
+        db.auth("myUserAdmin", "password" ) `
+
+        - Once authenticated as the user administrator, use `db.createUser()` to create additional users. You can assign any built-in roles or user-defined roles to the users.
+
+
+        - The database where you create the user (in this example, test) is that user’s authentication database.
+
+
+        * Create user w/ readWrite permissions
+
+                ` use ang6-crud
+
+                  db.createUser(
+                    {
+                      user: "newUser",
+                      pwd: "newPassword",
+                      roles: [ { role: "readWrite", db: "ang6-crud" },
+                               { role: "read", db: "reporting" } ]
+                    }
+                  ) `
+
+
+
+                  ` mongo  -u "newUser" -p "newPassword" --authenticationDatabase "ang6-crud" `
+
+                  ` use ang6-crud `
+
+                  ` db.auth("newUser", "newPassword") `
 
 ## To do:
 
