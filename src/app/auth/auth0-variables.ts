@@ -8,7 +8,7 @@ interface AuthConfig {
 }
 
 export const AUTH_CONFIG: AuthConfig = {
-  clientID: 'nAG2jFnP2fqoF6lWtNxIVSYu2tEGC4vW',
+  clientID: 'QHWVXznSaFNIB47Zbrn2A4DC5AobbVnQ',
   domain: 'juliettet.auth0.com',
   //callbackURL: 'http://localhost:7777'
   callbackURL:'https://ang6-crud.herokuapp.com/'

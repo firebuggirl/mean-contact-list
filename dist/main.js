@@ -293,10 +293,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AUTH_CONFIG", function() { return AUTH_CONFIG; });
 //import { environment } from '../../environments/environment';
 var AUTH_CONFIG = {
-    clientID: 'nAG2jFnP2fqoF6lWtNxIVSYu2tEGC4vW',
+    clientID: 'QHWVXznSaFNIB47Zbrn2A4DC5AobbVnQ',
     domain: 'juliettet.auth0.com',
-    //callbackURL: 'http://localhost:7777'
-    callbackURL: 'https://ang6-crud.herokuapp.com/'
+    callbackURL: 'http://localhost:7777'
+    //callbackURL:'https://ang6-crud.herokuapp.com/'
 };
 
 
@@ -320,7 +320,7 @@ module.exports = ".loading {\n  position: absolute;\n  display: flex;\n  justify
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"loading\">\n  <img src=\"assets/loading.svg\" alt=\"loading\">\n</div>\n"
+module.exports = "<div class=\"loading\">\n  <img src=\"../assets/loading.svg\" alt=\"loading\">\n</div>\n"
 
 /***/ }),
 
