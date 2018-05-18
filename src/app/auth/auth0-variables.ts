@@ -12,4 +12,5 @@ export const AUTH_CONFIG: AuthConfig = {
   domain: 'juliettet.auth0.com',
   //callbackURL: 'http://localhost:7777'
   callbackURL:'https://ang6-crud.herokuapp.com/'
+
 };
