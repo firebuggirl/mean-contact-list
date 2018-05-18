@@ -99,6 +99,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     `  heroku config:add NODE_ENV=production `
 
+    ` heroku logs `//check for deployment errors
+
     - add `Node Buildpack` via Heroku UI
 
     * Add mLab/MongoDb as add on:
