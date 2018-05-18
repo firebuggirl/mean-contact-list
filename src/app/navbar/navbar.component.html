@@ -16,11 +16,11 @@
         <a class="btn btn-danger" routerLink="/contacts" routerLinkActive="active">Contacts</a>
       </li>
       <li class="nav-item"><h4 *ngIf="auth.isAuthenticated() ; else nologin">
-            <a (click)="auth.logout()" routerLink="/logout" class="btn btn-warning">Log Out</a>
+            <a (click)="auth.logout()"  class="btn btn-warning">Log Out</a>
            </h4>
            <ng-template #nologin>
             <h4>
-               <a (click)="auth.login()" class="btn btn-success" routerLink="/login">Log In</a>
+               <a (click)="auth.login()" class="btn btn-success" >Log In</a>
             </h4>
             </ng-template>
       </li>
