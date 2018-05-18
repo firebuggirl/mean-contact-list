@@ -17,18 +17,23 @@ import { HttpClientModule } from '@angular/common/http';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { AuthGuard } from './guard/auth.guard';
+import { AuthService } from './auth/auth.service';
+import { LoginComponent } from './login/login.component';
+import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     HomeComponent,
     NotFoundComponent,
     NavbarComponent,
     ContactComponent,
     ContactCreateComponent,
     ContactDetailComponent,
-    ContactEditComponent
+    ContactEditComponent,
+    LoginComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [ContactService],
+  providers: [AuthService, ContactService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

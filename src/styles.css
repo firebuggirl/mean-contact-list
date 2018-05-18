@@ -16,6 +16,9 @@ body{
 	color: #af0404;
 }
 
+.btn{
+  color: beige;
+}
 .active[_ngcontent-c1] {
     background-color: #b1a7a7;
     border: 1px solid #7b7563;
@@ -144,5 +147,13 @@ input{
   section{
     margin-bottom: 2rem;
   }
+
+}
+
+
+.container{
+  margin-top: 200px;
+  color: beige;
+  text-align: center;
 
 }

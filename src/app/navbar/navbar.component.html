@@ -8,12 +8,21 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true }">Home</a>
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="btn btn-warning" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true }">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+        <a class="btn btn-danger" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+      </li>
+      <li class="nav-item"><h4 *ngIf="auth.isAuthenticated() ; else nologin">
+            <a (click)="auth.logout()" routerLink="/logout" class="btn btn-warning">Log Out</a>
+           </h4>
+           <ng-template #nologin>
+            <h4>
+               <a (click)="auth.login()" class="btn btn-success" routerLink="/login">Log In</a>
+            </h4>
+            </ng-template>
       </li>
 
     </ul>

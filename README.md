@@ -183,3 +183,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - Add search functionality
 
     - Add authentication with Auth0
+
+        ` npm i auth0-js --save `
+
+        ` ng g guard guard/auth --module app.module ``
+
+        ` ng g s auth/auth `
+
+        ` ng g c login `
+
+        ` ng g c callback `
