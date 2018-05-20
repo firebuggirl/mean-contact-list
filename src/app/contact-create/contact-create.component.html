@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row addContactRow">
       <form #contactForm="ngForm" (ngSubmit)="saveContact()">
           <h1 class="title">Add New Contact</h1>
         <div class="form-group ">
@@ -43,7 +43,7 @@
             <input  required name="zipcode" id="zipcode" [(ngModel)]="contact.zipcode" type="text" class="input" placeholder="90011">
           </div>
         </div>
-      
+
         <div class="field">
           <div class="control">
             <button class="button back" routerLink="/contacts"><i class="fas fa-arrow-left"></i>Back</button>

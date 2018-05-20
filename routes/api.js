@@ -13,6 +13,9 @@ const util = require('util');//for logging
 const mongodb = require("mongodb");
 const ObjectID = mongodb.ObjectID;
 
+const contactController = require('../controllers/contactController');
+const { catchErrors } = require('../handlers/errorHandlers'); //{ catchErrors } = object destructuring/es6 ....pulling in entire object into variable
+
 //mongoose.connect(process.env.LOCAL_DB || process.env.DATABASE);
 //mongoose.connect(process.env.LOCAL_DB);
 mongoose.connect(process.env.MONGODB_URI);//mLab connection string
@@ -75,4 +78,8 @@ router.put('/contact/:id', (req, res, next) => {
 router.delete('/contact/:id', (req, res, next) => {
     Contact.findByIdAndRemove(req.params.id, req.body, (err, post) => (err) ? next(err) : res.json(post));
 });
+
+
+router.get('/search', catchErrors(contactController.searchContacts));
+
 module.exports = router;

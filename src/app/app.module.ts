@@ -11,7 +11,10 @@ import { ContactCreateComponent } from './contact-create/contact-create.componen
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { ContactEditComponent } from './contact-edit/contact-edit.component';
 import { FormsModule } from '@angular/forms';
+
 import { ContactService } from './contact.service';
+import { MessageService }  from './message.service';
+
 import { HttpModule, Http, RequestOptions } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -21,6 +24,8 @@ import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './auth/auth.service';
 import { LoginComponent } from './login/login.component';
 import { CallbackComponent } from './callback/callback.component';
+import { SearchComponent } from './search/search.component';
+//import { ContactSearchComponent } from './contact-search/contact-search.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,9 @@ import { CallbackComponent } from './callback/callback.component';
     ContactDetailComponent,
     ContactEditComponent,
     LoginComponent,
-    CallbackComponent
+    CallbackComponent,
+    SearchComponent
+    //ContactSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,7 @@ import { CallbackComponent } from './callback/callback.component';
     HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [AuthService, ContactService, AuthGuard],
+  providers: [AuthService, ContactService, AuthGuard, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

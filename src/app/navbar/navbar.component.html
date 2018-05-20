@@ -2,7 +2,7 @@
 
 <div>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" routerLink="/">Dashboard</a>
+  <a class="navbar-brand" routerLink="/">MEAN</a>
   <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,6 +15,9 @@
       <li class="nav-item">
         <a class="btn btn-danger" routerLink="/contacts" routerLinkActive="active">Contacts</a>
       </li>
+      <li class="nav-item">
+        <a class="btn btn-danger" routerLink="/search" routerLinkActive="active">Search</a>
+      </li>
       <li class="nav-item"><h4 *ngIf="auth.isAuthenticated() ; else nologin">
             <a (click)="auth.logout()"  class="btn btn-warning">Log Out</a>
            </h4>
@@ -26,10 +29,17 @@
       </li>
 
     </ul>
-    <form class="form-inline mt-2 mt-md-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <!-- <form class="form-inline mt-2 mt-md-0">
+      <input #searchBox type="text" name="search" placeholder="Search Contacts..." id="search-box" (keyup)="search(searchBox.value)" />
+
+          <ul class="search-result">
+            <li *ngFor="let contact of contacts | async" >
+              <a [routerLink]="['/contact-details', contact._id]">
+                {{contact.name}}
+              </a>
+            </li>
+          </ul>
+    </form> -->
   </div>
 </nav>
 <div class='container'>

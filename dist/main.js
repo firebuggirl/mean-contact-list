@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".container{\n  max-width: 1240px;\n}\n"
 
 /***/ }),
 
@@ -113,13 +113,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./contact-edit/contact-edit.component */ "./src/app/contact-edit/contact-edit.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./contact.service */ "./src/app/contact.service.ts");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
-/* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./auth/auth.service */ "./src/app/auth/auth.service.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _callback_callback_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./callback/callback.component */ "./src/app/callback/callback.component.ts");
+/* harmony import */ var _message_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./message.service */ "./src/app/message.service.ts");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
+/* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./auth/auth.service */ "./src/app/auth/auth.service.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _callback_callback_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./callback/callback.component */ "./src/app/callback/callback.component.ts");
+/* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./search/search.component */ "./src/app/search/search.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -141,12 +143,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
 
 
+
+//import { ContactSearchComponent } from './contact-search/contact-search.component';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -161,18 +166,20 @@ var AppModule = /** @class */ (function () {
                 _contact_create_contact_create_component__WEBPACK_IMPORTED_MODULE_8__["ContactCreateComponent"],
                 _contact_detail_contact_detail_component__WEBPACK_IMPORTED_MODULE_9__["ContactDetailComponent"],
                 _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_10__["ContactEditComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"],
-                _callback_callback_component__WEBPACK_IMPORTED_MODULE_19__["CallbackComponent"]
+                _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"],
+                _callback_callback_component__WEBPACK_IMPORTED_MODULE_20__["CallbackComponent"],
+                _search_search_component__WEBPACK_IMPORTED_MODULE_21__["SearchComponent"]
+                //ContactSearchComponent
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _routing_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"],
-                _angular_http__WEBPACK_IMPORTED_MODULE_13__["HttpModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_15__["NgbModule"].forRoot()
+                _angular_http__WEBPACK_IMPORTED_MODULE_14__["HttpModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"].forRoot()
             ],
-            providers: [_auth_auth_service__WEBPACK_IMPORTED_MODULE_17__["AuthService"], _contact_service__WEBPACK_IMPORTED_MODULE_12__["ContactService"], _guard_auth_guard__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"]],
+            providers: [_auth_auth_service__WEBPACK_IMPORTED_MODULE_18__["AuthService"], _contact_service__WEBPACK_IMPORTED_MODULE_12__["ContactService"], _guard_auth_guard__WEBPACK_IMPORTED_MODULE_17__["AuthGuard"], _message_service__WEBPACK_IMPORTED_MODULE_13__["MessageService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
@@ -372,7 +379,7 @@ var CallbackComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n      <form #contactForm=\"ngForm\" (ngSubmit)=\"saveContact()\">\n          <h1 class=\"title\">Add New Contact</h1>\n        <div class=\"form-group \">\n          <label for=\"name\" class=\"col-2 col-form-label\">Name</label>\n          <div>\n            <input required name=\"name\" id=\"title\" [(ngModel)]=\"contact.name\" type=\"text\" class=\"input\" placeholder=\"Name\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"email\" class=\"col-2 col-form-label\">Email</label>\n          <div>\n            <input  required name=\"email\" id=\"email\" [(ngModel)]=\"contact.email\" type=\"text\" class=\"input\" placeholder=\"support@mlab.com\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"phone\" class=\"col-2 col-form-label\">Phone</label>\n          <div>\n            <input  required name=\"phone\" id=\"phone\" [(ngModel)]=\"contact.phone\" type=\"text\" class=\"input\" placeholder=\"1234567890\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"address\" class=\"col-2 col-form-label\">Address</label>\n          <div>\n            <input  required name=\"address\" id=\"address\" [(ngModel)]=\"contact.address\" type=\"text\" class=\"input\" placeholder=\"123 Tumbleweed Dr.\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"city\" class=\"col-2 col-form-label\">City</label>\n          <div>\n            <input  required name=\"city\" id=\"city\" [(ngModel)]=\"contact.city\" type=\"text\" class=\"input\" placeholder=\"Desert Springs\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"state\" class=\"col-2 col-form-label\">State</label>\n          <div>\n            <input  required name=\"state\" id=\"state\" [(ngModel)]=\"contact.state\" type=\"text\" class=\"input\" placeholder=\"CA\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"zipcode\" class=\"col-2 col-form-label\">Zipcode</label>\n          <div>\n            <input  required name=\"zipcode\" id=\"zipcode\" [(ngModel)]=\"contact.zipcode\" type=\"text\" class=\"input\" placeholder=\"90011\">\n          </div>\n        </div>\n      \n        <div class=\"field\">\n          <div class=\"control\">\n            <button class=\"button back\" routerLink=\"/contacts\"><i class=\"fas fa-arrow-left\"></i>Back</button>\n            <button class=\"button create\" type=\"submit\" [disabled]=\"!contactForm.valid\">Create</button>\n          </div>\n        </div>\n\n      </form>\n\n</div>\n"
+module.exports = "<div class=\"row addContactRow\">\n      <form #contactForm=\"ngForm\" (ngSubmit)=\"saveContact()\">\n          <h1 class=\"title\">Add New Contact</h1>\n        <div class=\"form-group \">\n          <label for=\"name\" class=\"col-2 col-form-label\">Name</label>\n          <div>\n            <input required name=\"name\" id=\"title\" [(ngModel)]=\"contact.name\" type=\"text\" class=\"input\" placeholder=\"Name\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"email\" class=\"col-2 col-form-label\">Email</label>\n          <div>\n            <input  required name=\"email\" id=\"email\" [(ngModel)]=\"contact.email\" type=\"text\" class=\"input\" placeholder=\"support@mlab.com\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"phone\" class=\"col-2 col-form-label\">Phone</label>\n          <div>\n            <input  required name=\"phone\" id=\"phone\" [(ngModel)]=\"contact.phone\" type=\"text\" class=\"input\" placeholder=\"1234567890\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"address\" class=\"col-2 col-form-label\">Address</label>\n          <div>\n            <input  required name=\"address\" id=\"address\" [(ngModel)]=\"contact.address\" type=\"text\" class=\"input\" placeholder=\"123 Tumbleweed Dr.\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"city\" class=\"col-2 col-form-label\">City</label>\n          <div>\n            <input  required name=\"city\" id=\"city\" [(ngModel)]=\"contact.city\" type=\"text\" class=\"input\" placeholder=\"Desert Springs\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"state\" class=\"col-2 col-form-label\">State</label>\n          <div>\n            <input  required name=\"state\" id=\"state\" [(ngModel)]=\"contact.state\" type=\"text\" class=\"input\" placeholder=\"CA\">\n          </div>\n        </div>\n        <div class=\"form-group \">\n          <label for=\"zipcode\" class=\"col-2 col-form-label\">Zipcode</label>\n          <div>\n            <input  required name=\"zipcode\" id=\"zipcode\" [(ngModel)]=\"contact.zipcode\" type=\"text\" class=\"input\" placeholder=\"90011\">\n          </div>\n        </div>\n\n        <div class=\"field\">\n          <div class=\"control\">\n            <button class=\"button back\" routerLink=\"/contacts\"><i class=\"fas fa-arrow-left\"></i>Back</button>\n            <button class=\"button create\" type=\"submit\" [disabled]=\"!contactForm.valid\">Create</button>\n          </div>\n        </div>\n\n      </form>\n\n</div>\n"
 
 /***/ }),
 
@@ -578,7 +585,10 @@ var ContactEditComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactService", function() { return ContactService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _message_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./message.service */ "./src/app/message.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -589,10 +599,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+//import { Observable } from 'rxjs/Observable';
+
+
+
 
 var ContactService = /** @class */ (function () {
-    function ContactService(http) {
+    function ContactService(http, messageService) {
         this.http = http;
+        this.messageService = messageService;
+        this.contactUrl = 'api/contact';
+        this.contactsUrl = 'api/contacts'; // URL to web api
     }
     // GET ALL ContactS
     ContactService.prototype.getAllContacts = function () {
@@ -614,9 +631,50 @@ var ContactService = /** @class */ (function () {
     ContactService.prototype.deleteContact = function (id) {
         return this.http.delete("api/Contact/" + id);
     };
+    //
+    //   searchContacts(term: string): Observable<Contact[]> {
+    //
+    //
+    //     if (!term.trim()) {
+    //           // if not search id, return empty hero array.
+    //           return of([]);
+    //         }
+    //       //  return this.http.get<Contact[]>(`api/search/?name=${term}`).pipe(
+    //        //return this.http.get<Contact[]>(`${this.contactUrl}/${id}/name=${id}`).pipe(
+    //       //return this.http.get<Contact[]>(`api/contacts/${id}/name=${id}`).pipe(
+    // let data = {limit: "2"};
+    //       return this.http.get<Contact[]>(`api/search/`,  {params: data}).pipe(
+    //         tap(_ => this.log(`found contacts matching "${term}"`)),
+    //         catchError(this.handleError<Contact[]>('searchContacts'))
+    //       );
+    //  }
+    ContactService.prototype.searchContacts = function (term) {
+        term = term.trim();
+        // Add safe, URL encoded search parameter if there is a search term
+        var options = term ?
+            { params: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set('name', term) } : {};
+        return this.http.get("api/search/", options)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('searchContactes', [])));
+    };
+    ContactService.prototype.handleError = function (operation, result) {
+        var _this = this;
+        if (operation === void 0) { operation = 'operation'; }
+        return function (error) {
+            // TODO: send the error to remote logging infrastructure
+            console.error(error); // log to console instead
+            // TODO: better job of transforming error for user consumption
+            _this.log(operation + " failed: " + error.message);
+            // Let the app keep running by returning an empty result.
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(result);
+        };
+    };
+    /** Log a ContactService message with the MessageService */
+    ContactService.prototype.log = function (message) {
+        this.messageService.add('ContactService: ' + message);
+    };
     ContactService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _message_service__WEBPACK_IMPORTED_MODULE_4__["MessageService"]])
     ], ContactService);
     return ContactService;
 }());
@@ -740,7 +798,7 @@ var AuthGuard = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"starter-template\">\n  <div class=\"columns\">\n    <div class=\"column1\">\n      <img width=\"400\" height=\"185\" src=\"../../assets/images/mean-logo2.png\">\n    </div>\n    <div class=\"column\">\n      <h1 class=\"title\">MEAN Stack Contact List</h1>\n      <h2 class=\"subtitle\">W/ A Node.js RESTful API</h2>\n      <h6 class=\"subtitle\">Background photo by Will Stewart via Unsplash</h6>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"starter-template\">\n  <div class=\"columns\">\n    <div class=\"column1\">\n      <img  src=\"../../assets/images/mean-logo2.png\">\n    </div>\n    <div class=\"column\">\n      <h1 class=\"title\">MEAN Stack Contact List</h1>\n      <h2 class=\"subtitle\">W/ A Node.js RESTful API</h2>\n      <h6 class=\"subtitle\">Background photo by Will Stewart via Unsplash</h6>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -852,6 +910,44 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/message.service.ts":
+/*!************************************!*\
+  !*** ./src/app/message.service.ts ***!
+  \************************************/
+/*! exports provided: MessageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageService", function() { return MessageService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var MessageService = /** @class */ (function () {
+    function MessageService() {
+        this.messages = [];
+    }
+    MessageService.prototype.add = function (message) {
+        this.messages.push(message);
+    };
+    MessageService.prototype.clear = function () {
+        this.messages = [];
+    };
+    MessageService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+    ], MessageService);
+    return MessageService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/navbar/navbar.component.html":
 /*!**********************************************!*\
   !*** ./src/app/navbar/navbar.component.html ***!
@@ -859,7 +955,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div>\n<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">Dashboard</a>\n  <button class=\"navbar-toggler d-lg-none\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarsExampleDefault\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \">\n        <a class=\"btn btn-warning\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/contacts\" routerLinkActive=\"active\">Contacts</a>\n      </li>\n      <li class=\"nav-item\"><h4 *ngIf=\"auth.isAuthenticated() ; else nologin\">\n            <a (click)=\"auth.logout()\"  class=\"btn btn-warning\">Log Out</a>\n           </h4>\n           <ng-template #nologin>\n            <h4>\n               <a (click)=\"auth.login()\" class=\"btn btn-success\" >Log In</a>\n            </h4>\n            </ng-template>\n      </li>\n\n    </ul>\n    <form class=\"form-inline mt-2 mt-md-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\n      <button class=\"btn btn-outline-danger my-2 my-sm-0\" type=\"submit\">Search</button>\n    </form>\n  </div>\n</nav>\n<div class='container'>\n    <router-outlet></router-outlet>\n</div>\n</div>\n"
+module.exports = "\n\n<div>\n<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">MEAN</a>\n  <button class=\"navbar-toggler d-lg-none\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarsExampleDefault\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \">\n        <a class=\"btn btn-warning\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/contacts\" routerLinkActive=\"active\">Contacts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n      </li>\n      <li class=\"nav-item\"><h4 *ngIf=\"auth.isAuthenticated() ; else nologin\">\n            <a (click)=\"auth.logout()\"  class=\"btn btn-warning\">Log Out</a>\n           </h4>\n           <ng-template #nologin>\n            <h4>\n               <a (click)=\"auth.login()\" class=\"btn btn-success\" >Log In</a>\n            </h4>\n            </ng-template>\n      </li>\n\n    </ul>\n    <!-- <form class=\"form-inline mt-2 mt-md-0\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search Contacts...\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n\n          <ul class=\"search-result\">\n            <li *ngFor=\"let contact of contacts | async\" >\n              <a [routerLink]=\"['/contact-details', contact._id]\">\n                {{contact.name}}\n              </a>\n            </li>\n          </ul>\n    </form> -->\n  </div>\n</nav>\n<div class='container'>\n    <router-outlet></router-outlet>\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -876,6 +972,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../auth/auth.service */ "./src/app/auth/auth.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../contact.service */ "./src/app/contact.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -888,20 +988,41 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
+
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent(auth, http) {
+    function NavbarComponent(auth, http, contactService, router, route) {
         this.auth = auth;
         this.http = http;
+        this.contactService = contactService;
+        this.router = router;
+        this.route = route;
+        this.searchTerms = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.isCollapsed = true;
         auth.handleAuthentication();
     }
+    // Push a search term into the observable stream.
+    NavbarComponent.prototype.search = function (term) {
+        this.searchTerms.next(term);
+    };
     NavbarComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.contacts = this.searchTerms.pipe(
+        // wait 300ms after each keystroke before constermering the term
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["debounceTime"])(300), 
+        // ignore new term if same as previous term
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["distinctUntilChanged"])(), 
+        // switch to new search observable each time the term changes
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(function (term) { return _this.contactService.searchContacts(term); }));
         if (Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["isDevMode"])()) {
             console.log('👋 Development!');
         }
         else {
             console.log('💪 Production!');
         }
+        //this.getContactDetails(this.route.snapshot.params['id']);
     };
     NavbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -909,7 +1030,11 @@ var NavbarComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/navbar/navbar.component.html"),
             styles: ["\n    .active {\n      background: lightgray;\n    }\n  "]
         }),
-        __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"],
+            _contact_service__WEBPACK_IMPORTED_MODULE_6__["ContactService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
@@ -987,7 +1112,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _contact_create_contact_create_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../contact-create/contact-create.component */ "./src/app/contact-create/contact-create.component.ts");
 /* harmony import */ var _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../contact-edit/contact-edit.component */ "./src/app/contact-edit/contact-edit.component.ts");
 /* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
-/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../guard/auth.guard */ "./src/app/guard/auth.guard.ts");
+/* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../search/search.component */ "./src/app/search/search.component.ts");
+/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../guard/auth.guard */ "./src/app/guard/auth.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1004,13 +1130,19 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_2__["LoginComponent"] },
-    { path: 'contacts', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_4__["ContactComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
-    { path: 'contact-details/:id', component: _contact_detail_contact_detail_component__WEBPACK_IMPORTED_MODULE_5__["ContactDetailComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
-    { path: 'contact-create', component: _contact_create_contact_create_component__WEBPACK_IMPORTED_MODULE_6__["ContactCreateComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
-    { path: 'contact-edit/:id', component: _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_7__["ContactEditComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
+    { path: 'search', component: _search_search_component__WEBPACK_IMPORTED_MODULE_9__["SearchComponent"] },
+    // { path: 'contacts', component: ContactComponent},// for dev mode....not having to sign in...
+    // { path: 'contact-details/:id', component: ContactDetailComponent},
+    // { path: 'contact-create', component: ContactCreateComponent },
+    // { path: 'contact-edit/:id', component: ContactEditComponent },
+    { path: 'contacts', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_4__["ContactComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'contact-details/:id', component: _contact_detail_contact_detail_component__WEBPACK_IMPORTED_MODULE_5__["ContactDetailComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'contact-create', component: _contact_create_contact_create_component__WEBPACK_IMPORTED_MODULE_6__["ContactCreateComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'contact-edit/:id', component: _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_7__["ContactEditComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -1027,6 +1159,106 @@ var AppRoutingModule = /** @class */ (function () {
         })
     ], AppRoutingModule);
     return AppRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/search/search.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/search/search.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".search-result {\n\tlist-style-type: none;\n\tmargin-top: 3rem;\n\t/* background-color: red; */\n\ttext-align: center;\n\n}\n\n#search-box{\n  width: 70vw;\n  border-radius: 6px;\n  height: 50px;\n}\n\nli{\n  margin-right: 6vw;\n}\n\nli a{\n  color: beige;\n  font-size: 30px;\n  /* margin-right: 10vw; */\n\n}\n\ninput[type=text] {\n    border: 2px solid red;\n    padding: 12px 20px;\n    margin: 8px 0;\n    box-sizing: border-box;\n\t\tcolor: #7b0101;\n}\n\ninput[type=text]:focus {\n    background-color: #960f03;\n\t\tborder: 3px solid #ded9c9;\n\t\tcolor: beige;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/search/search.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/search/search.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n\n<div id=\"searchDiv\">\n\n    <form class=\"search\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search by name or state\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n\n          <ul class=\"search-result\">\n            <li *ngFor=\"let contact of contacts | async\" >\n              <a [routerLink]=\"['/contact-details', contact._id]\">\n                {{contact.name}}\n              </a>\n            </li>\n          </ul>\n    </form>\n  </div>\n\n<div >\n    <router-outlet></router-outlet>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/search/search.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/search/search.component.ts ***!
+  \********************************************/
+/*! exports provided: SearchComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchComponent", function() { return SearchComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../auth/auth.service */ "./src/app/auth/auth.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../contact.service */ "./src/app/contact.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var SearchComponent = /** @class */ (function () {
+    function SearchComponent(auth, http, contactService, router, route) {
+        this.auth = auth;
+        this.http = http;
+        this.contactService = contactService;
+        this.router = router;
+        this.route = route;
+        this.searchTerms = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this.isCollapsed = true;
+        auth.handleAuthentication();
+    }
+    // Push a search term into the observable stream.
+    SearchComponent.prototype.search = function (term) {
+        this.searchTerms.next(term);
+    };
+    SearchComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.contacts = this.searchTerms.pipe(
+        // wait 300ms after each keystroke before constermering the term
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["debounceTime"])(300), 
+        // ignore new term if same as previous term
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["distinctUntilChanged"])(), 
+        // switch to new search observable each time the term changes
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(function (term) { return _this.contactService.searchContacts(term); }));
+        //this.getContactDetails(this.route.snapshot.params['id']);
+    };
+    SearchComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-search',
+            template: __webpack_require__(/*! ./search.component.html */ "./src/app/search/search.component.html"),
+            styles: [__webpack_require__(/*! ./search.component.css */ "./src/app/search/search.component.css")]
+        }),
+        __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"],
+            _contact_service__WEBPACK_IMPORTED_MODULE_6__["ContactService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]])
+    ], SearchComponent);
+    return SearchComponent;
 }());
 
 

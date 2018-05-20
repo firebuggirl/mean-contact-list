@@ -186,6 +186,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     - Add search functionality
 
+        ` ng g c contact-search `
+
     - Add authentication with Auth0
 
         ` npm i auth0-js --save `

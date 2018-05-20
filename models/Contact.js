@@ -33,7 +33,11 @@ var ContactsSchema = new mongoose.Schema({
 });
 
 
-
+// Define our indexes
+ContactsSchema.index({
+  name: 'text', //index name field
+  state: 'text' //index description field
+});//
 
 
 
