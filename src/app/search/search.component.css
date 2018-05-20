@@ -6,11 +6,7 @@
 
 }
 
-#searchUL{
-	display: flex;
-	justify-content: center;
-	width:85vw;
-}
+
 
 @media screen and (max-width: 500px){
 	#searchUL{
@@ -18,11 +14,15 @@
 	}
 }
 #search-box{
-  width: 90vw;
+  width: 85vw;
   border-radius: 6px;
   height: 50px;
 }
-
+#searchUL{
+	display: flex;
+	justify-content: center;
+	width:80vw;
+}
 
 li{
   /* margin-right: 6vw; */

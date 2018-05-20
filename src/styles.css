@@ -140,7 +140,7 @@ table thead th{
 }
 
 input{
-  width: 93vw;
+  width: 83vw;
   /* margin-right: 5%;
   margin-left: 3%; */
 }
@@ -190,7 +190,11 @@ label{
   }
 }
 
-
+@media screen and (max-width: 450px){
+  .back, .create{
+    width: 75vw;
+  }
+}
 
 @media screen and (max-width: 600px){
   .nav-item .btn{
@@ -216,7 +220,7 @@ label{
     width: 62vw;
   }
   .back, .create{
-    width: 80vw;
+    width: 58vw;
   }
   /* .btn-detail, .btn-edit{
     margin-left: 12rem;

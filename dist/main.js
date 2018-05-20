@@ -1172,7 +1172,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".search-result {\n\tlist-style-type: none;\n\tmargin-top: 3rem;\n\t/* background-color: red; */\n\ttext-align: center;\n\n}\n\n#searchUL{\n\tdisplay: flex;\n\tjustify-content: center;\n\twidth:85vw;\n}\n\n@media screen and (max-width: 500px){\n\t#searchUL{\n\t\twidth:80vw;\n\t}\n}\n\n#search-box{\n  width: 90vw;\n  border-radius: 6px;\n  height: 50px;\n}\n\nli{\n  /* margin-right: 6vw; */\n}\n\nli a{\n  color: beige;\n  font-size: 30px;\n  /* margin-right: 10vw; */\n\n}\n\ninput[type=text] {\n    border: 2px solid red;\n    padding: 12px 20px;\n    margin: 8px 0;\n    box-sizing: border-box;\n\t\tcolor: #7b0101;\n}\n\ninput[type=text]:focus {\n    background-color: #960f03;\n\t\tborder: 3px solid #ded9c9;\n\t\tcolor: beige;\n}\n"
+module.exports = ".search-result {\n\tlist-style-type: none;\n\tmargin-top: 3rem;\n\t/* background-color: red; */\n\ttext-align: center;\n\n}\n\n\n\n@media screen and (max-width: 500px){\n\t#searchUL{\n\t\twidth:80vw;\n\t}\n}\n\n\n\n#search-box{\n  width: 85vw;\n  border-radius: 6px;\n  height: 50px;\n}\n\n\n\n#searchUL{\n\tdisplay: flex;\n\tjustify-content: center;\n\twidth:80vw;\n}\n\n\n\nli{\n  /* margin-right: 6vw; */\n}\n\n\n\nli a{\n  color: beige;\n  font-size: 30px;\n  /* margin-right: 10vw; */\n\n}\n\n\n\ninput[type=text] {\n    border: 2px solid red;\n    padding: 12px 20px;\n    margin: 8px 0;\n    box-sizing: border-box;\n\t\tcolor: #7b0101;\n}\n\n\n\ninput[type=text]:focus {\n    background-color: #960f03;\n\t\tborder: 3px solid #ded9c9;\n\t\tcolor: beige;\n}\n"
 
 /***/ }),
 
