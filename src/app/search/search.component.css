@@ -6,15 +6,26 @@
 
 }
 
+#searchUL{
+	display: flex;
+	justify-content: center;
+	width:85vw;
+}
+
+@media screen and (max-width: 500px){
+	#searchUL{
+		width:80vw;
+	}
+}
 #search-box{
-  width: 70vw;
+  width: 90vw;
   border-radius: 6px;
   height: 50px;
 }
 
 
 li{
-  margin-right: 6vw;
+  /* margin-right: 6vw; */
 }
 li a{
   color: beige;

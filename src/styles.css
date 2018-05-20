@@ -10,7 +10,18 @@ body{
 
 
 }
+.container{
+  margin-top: 150px;
+  color: beige;
+  max-width: 900px;
+}
+.home-column{
+  text-align: center;
+}
 
+h1{
+  margin-bottom: 40px;
+}
 img{
   max-width: 100%;
 }
@@ -32,7 +43,10 @@ img{
     border-radius: 4px;
 }
 
-
+tr{
+  height: 40px;
+  border-bottom: 3px solid beige;
+}
 
 
 .column1{
@@ -68,8 +82,8 @@ h2{
 
 .contactlist {
     margin-top: 7rem;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 
 
 }
@@ -84,14 +98,11 @@ h2{
   margin-top: 7rem;
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
-.row {
-  /* padding-top:6rem; */
-  margin: 0 auto;
-}
+
 
 form{
   margin: 0 auto;
@@ -115,10 +126,11 @@ a.button.is-text{
   border: 2px solid #e01005;
   border-radius: 4px;
   display: block;
-  width: 80vw;
-  margin:  2rem 0rem;
+  width: 75vw;
+  margin: 2rem 2rem;
   background-color: #ad8565;
-  color: beige
+  color: beige;
+  padding: 4px;
 
 
 }
@@ -128,8 +140,8 @@ table thead th{
 
 input{
   width: 80vw;
-  margin-right: 5%;
-  margin-left: 3%;
+  /* margin-right: 5%;
+  margin-left: 3%; */
 }
 
 label{
@@ -159,21 +171,20 @@ label{
   .btn-column{
     display: flex;
     justify-content: space-around;
-    margin-left: 0rem;
+    /* margin-left: 0rem; */
   }
   section{
     margin-bottom: 2rem;
   }
 
-}
-
-
-.container{
-  margin-top: 150px;
-  color: beige;
-  text-align: center;
+  .container{
+    max-width: 800px;
+  }
 
 }
+
+
+
 
 
 @media screen and (max-width: 600px){
@@ -186,12 +197,13 @@ label{
     padding-right: 8px;
   }
   .contact-edit{
-      margin-right: 20%;
+      /* margin-right: 20%; */
   }
   input{
-    margin-right: 5%;
+    width: 90vw;
+    /* margin-right: 5%; */
   }
   label{
-    margin-right: 5%;
+    /* margin-right: 5%; */
   }
 }
