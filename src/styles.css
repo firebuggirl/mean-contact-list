@@ -212,10 +212,13 @@ label{
 
 
 @media screen and (min-width: 1150px){
-  .container{
-    margin-right: 18%;
+  input{
+    width: 62vw;
   }
   .back, .create{
     width: 80vw;
   }
+  /* .btn-detail, .btn-edit{
+    margin-left: 12rem;
+  } */
 }
