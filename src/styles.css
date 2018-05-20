@@ -139,7 +139,7 @@ table thead th{
 }
 
 input{
-  width: 80vw;
+  width: 85vw;
   /* margin-right: 5%;
   margin-left: 3%; */
 }
@@ -183,7 +183,11 @@ label{
 
 }
 
-
+@media screen and (max-width: 768px){
+  input{
+    width: 90vw;
+  }
+}
 
 
 
@@ -199,10 +203,7 @@ label{
   .contact-edit{
       /* margin-right: 20%; */
   }
-  input{
-    width: 90vw;
-    /* margin-right: 5%; */
-  }
+
   label{
     /* margin-right: 5%; */
   }
