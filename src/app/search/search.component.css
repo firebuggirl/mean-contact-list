@@ -14,14 +14,14 @@
 	}
 }
 #search-box{
-  width: 85vw;
+  /* width: 85vw; */
   border-radius: 6px;
   height: 50px;
 }
 #searchUL{
 	display: flex;
 	justify-content: center;
-	width:80vw;
+	/* width:80vw; */
 }
 
 li{
