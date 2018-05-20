@@ -127,7 +127,7 @@ a.button.is-text{
   border: 2px solid #e01005;
   border-radius: 4px;
   display: block;
-  width: 75vw;
+  width: 85vw;
   margin: 2rem 2rem;
   background-color: #ad8565;
   color: beige;
@@ -140,7 +140,7 @@ table thead th{
 }
 
 input{
-  width: 85vw;
+  width: 93vw;
   /* margin-right: 5%;
   margin-left: 3%; */
 }
@@ -214,5 +214,8 @@ label{
 @media screen and (min-width: 1150px){
   .container{
     margin-right: 18%;
+  }
+  .back, .create{
+    width: 80vw;
   }
 }
