@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Contact = mongoose.model('Contact');
+const ContactService = require('../services/contacts.service')
+
+
 
 exports.searchContacts = async (req, res) => {
-
-
-
 
   const contacts = await Contact
   // first find contacts that match
@@ -26,6 +26,20 @@ exports.searchContacts = async (req, res) => {
   //return res.json(contacts);
   res.json(contacts);
 
-
-
 };
+
+
+// exports.getContacts = async function(req, res, next){
+//
+//     var page = req.query.page ? req.query.page : 1
+//     var limit = req.query.limit ? req.query.limit : 10;
+//
+//     console.log(page, limit)
+//
+//     try{
+//         var contacts = await ContactsService.getContacts({}, page, limit)
+//         return res.status(200).json({status: 200, data: contacts, message: "Succesfully Contacts Recieved"});
+//     }catch(e){
+//         return res.status(400).json({status: 400, message: e.message});
+//     }
+// }

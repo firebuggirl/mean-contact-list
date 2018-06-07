@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var mongoosePaginate = require('mongoose-paginate');
 
 var ContactsSchema = new mongoose.Schema({
 
@@ -40,7 +41,7 @@ ContactsSchema.index({
 });//
 
 
-
+ContactsSchema.plugin(mongoosePaginate);
 
 var Contact = mongoose.model('Contact', ContactsSchema);//model method creates schema
 module.exports = Contact;

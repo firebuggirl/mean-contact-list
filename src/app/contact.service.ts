@@ -7,6 +7,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
 
 
+
 @Injectable()
 export class ContactService {
 
@@ -76,6 +77,7 @@ searchContacts(term: string): Observable<Contact[]> {
       catchError(this.handleError<Contact[]>('searchContactes', []))
     );
 }
+
 
 
 

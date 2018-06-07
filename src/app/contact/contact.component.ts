@@ -11,11 +11,16 @@ export class ContactComponent implements OnInit {
 
   contacts: any;
 
+  totalRecords: number = 0;
+pageSize: number = 10;
+
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     this.contactService.getAllContacts()
       .subscribe((data: Contact[]) => this.contacts = data);
   }
+
+
 
 }

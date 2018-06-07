@@ -122,6 +122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _callback_callback_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./callback/callback.component */ "./src/app/callback/callback.component.ts");
 /* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./search/search.component */ "./src/app/search/search.component.ts");
+/* harmony import */ var _pagination_pagination_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pagination/pagination.component */ "./src/app/pagination/pagination.component.ts");
+/* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -151,7 +153,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 //import { ContactSearchComponent } from './contact-search/contact-search.component';
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -168,7 +172,8 @@ var AppModule = /** @class */ (function () {
                 _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_10__["ContactEditComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"],
                 _callback_callback_component__WEBPACK_IMPORTED_MODULE_20__["CallbackComponent"],
-                _search_search_component__WEBPACK_IMPORTED_MODULE_21__["SearchComponent"]
+                _search_search_component__WEBPACK_IMPORTED_MODULE_21__["SearchComponent"],
+                _pagination_pagination_component__WEBPACK_IMPORTED_MODULE_22__["PaginationComponent"]
                 //ContactSearchComponent
             ],
             imports: [
@@ -177,6 +182,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_14__["HttpModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
+                ngx_pagination__WEBPACK_IMPORTED_MODULE_23__["NgxPaginationModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"].forRoot()
             ],
             providers: [_auth_auth_service__WEBPACK_IMPORTED_MODULE_18__["AuthService"], _contact_service__WEBPACK_IMPORTED_MODULE_12__["ContactService"], _guard_auth_guard__WEBPACK_IMPORTED_MODULE_17__["AuthGuard"], _message_service__WEBPACK_IMPORTED_MODULE_13__["MessageService"]],
@@ -303,7 +309,8 @@ var AUTH_CONFIG = {
     clientID: 'QHWVXznSaFNIB47Zbrn2A4DC5AobbVnQ',
     domain: 'juliettet.auth0.com',
     //callbackURL: 'http://localhost:7777'
-    callbackURL: 'https://ang6-crud.herokuapp.com/'
+    //callbackURL:'https://ang6-crud.herokuapp.com/'
+    callbackURL: 'http://aci-demo-juliettet.eastus.azurecontainer.io/'
 };
 
 
@@ -690,7 +697,7 @@ var ContactService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"contactlist\" >\n  <h1 class=\"title\">Contact List\n    <a [routerLink]=\"['/contact-create']\" class=\"button is-link is-outlined\"><i class=\"fas fa-plus\"></i>Add</a>\n  </h1>\n  <table  >\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Phone</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Zipcode</th>\n        <!-- <th>Work</th>\n        <th>Mobile</th> -->\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let contact of contacts\">\n        <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n        <td>{{ contact.email }}</td>\n        <td>{{ contact.phone }}</td>\n        <td>{{ contact.address }}</td>\n        <td>{{ contact.city }}</td>\n        <td>{{ contact.state }}</td>\n        <td>{{ contact.zipcode }}</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n"
+module.exports = "<div class=\"contactlist\" >\n  <h1 class=\"title\">Contact List\n    <a [routerLink]=\"['/contact-create']\" class=\"button is-link is-outlined\"><i class=\"fas fa-plus\"></i>Add</a>\n  </h1>\n  <table  >\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Phone</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Zipcode</th>\n        <!-- <th>Work</th>\n        <th>Mobile</th> -->\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let contact of contacts\">\n        <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n        <td>{{ contact.email }}</td>\n        <td>{{ contact.phone }}</td>\n        <td>{{ contact.address }}</td>\n        <td>{{ contact.city }}</td>\n        <td>{{ contact.state }}</td>\n        <td>{{ contact.zipcode }}</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n</div>\n"
 
 /***/ }),
 
@@ -720,6 +727,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var ContactComponent = /** @class */ (function () {
     function ContactComponent(contactService) {
         this.contactService = contactService;
+        this.totalRecords = 0;
+        this.pageSize = 10;
     }
     ContactComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1087,6 +1096,71 @@ var NotFoundComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], NotFoundComponent);
     return NotFoundComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pagination/pagination.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/pagination/pagination.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/pagination/pagination.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/pagination/pagination.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul>\n      <li *ngFor=\"let item of collection | paginate: { itemsPerPage: 10, currentPage: p }\"> ... </li>\n    </ul>\n\n    <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n"
+
+/***/ }),
+
+/***/ "./src/app/pagination/pagination.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/pagination/pagination.component.ts ***!
+  \****************************************************/
+/*! exports provided: PaginationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginationComponent", function() { return PaginationComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PaginationComponent = /** @class */ (function () {
+    //collection: any[] = someArrayOfThings;
+    function PaginationComponent() {
+        this.p = 1;
+    }
+    PaginationComponent.prototype.ngOnInit = function () {
+    };
+    PaginationComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-pagination',
+            template: __webpack_require__(/*! ./pagination.component.html */ "./src/app/pagination/pagination.component.html"),
+            styles: [__webpack_require__(/*! ./pagination.component.css */ "./src/app/pagination/pagination.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PaginationComponent);
+    return PaginationComponent;
 }());
 
 

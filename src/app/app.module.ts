@@ -25,7 +25,10 @@ import { AuthService } from './auth/auth.service';
 import { LoginComponent } from './login/login.component';
 import { CallbackComponent } from './callback/callback.component';
 import { SearchComponent } from './search/search.component';
+import { PaginationComponent } from './pagination/pagination.component';
 //import { ContactSearchComponent } from './contact-search/contact-search.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { SearchComponent } from './search/search.component';
     ContactEditComponent,
     LoginComponent,
     CallbackComponent,
-    SearchComponent
+    SearchComponent,
+    PaginationComponent
     //ContactSearchComponent
   ],
   imports: [
@@ -48,6 +52,7 @@ import { SearchComponent } from './search/search.component';
     FormsModule,
     HttpModule,
     HttpClientModule,
+    NgxPaginationModule,
     NgbModule.forRoot()
   ],
   providers: [AuthService, ContactService, AuthGuard, MessageService],
