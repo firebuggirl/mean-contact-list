@@ -4,8 +4,8 @@ import { ContactService } from '../contact.service';
 import { Contact } from '../models/Contact';
 
 @Component({
-  selector: 'app-Contact-edit',
-  templateUrl: './Contact-edit.component.html',
+  selector: 'app-contact-edit',
+  templateUrl: './contact-edit.component.html',
   styles: []
 })
 export class ContactEditComponent implements OnInit {

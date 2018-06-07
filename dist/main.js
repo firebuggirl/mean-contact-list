@@ -310,7 +310,8 @@ var AUTH_CONFIG = {
     domain: 'juliettet.auth0.com',
     //callbackURL: 'http://localhost:7777'
     //callbackURL:'https://ang6-crud.herokuapp.com/'
-    callbackURL: 'http://aci-demo-juliettet.eastus.azurecontainer.io/'
+    //callbackURL: 'http://aci-demo-juliettet.eastus.azurecontainer.io/'
+    callbackURL: 'http://138.68.230.240:32780/' //DigitalOcean Test
 };
 
 
@@ -511,9 +512,9 @@ var ContactDetailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/contact-edit/Contact-edit.component.html":
+/***/ "./src/app/contact-edit/contact-edit.component.html":
 /*!**********************************************************!*\
-  !*** ./src/app/contact-edit/Contact-edit.component.html ***!
+  !*** ./src/app/contact-edit/contact-edit.component.html ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -568,8 +569,8 @@ var ContactEditComponent = /** @class */ (function () {
     };
     ContactEditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-Contact-edit',
-            template: __webpack_require__(/*! ./Contact-edit.component.html */ "./src/app/contact-edit/Contact-edit.component.html"),
+            selector: 'app-contact-edit',
+            template: __webpack_require__(/*! ./contact-edit.component.html */ "./src/app/contact-edit/contact-edit.component.html"),
             styles: []
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"]])
