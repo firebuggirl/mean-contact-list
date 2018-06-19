@@ -309,9 +309,9 @@ var AUTH_CONFIG = {
     clientID: 'QHWVXznSaFNIB47Zbrn2A4DC5AobbVnQ',
     domain: 'juliettet.auth0.com',
     //callbackURL: 'http://localhost:7777'
-    //callbackURL:'https://ang6-crud.herokuapp.com/'
+    callbackURL: 'https://ang6-crud.herokuapp.com/'
     //callbackURL: 'http://aci-demo-juliettet.eastus.azurecontainer.io/'
-    callbackURL: 'http://138.68.230.240:32780/' //DigitalOcean Test
+    //callbackURL: 'http://138.68.230.240:32780/' //DigitalOcean Test
 };
 
 
@@ -1208,8 +1208,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
+    { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_2__["LoginComponent"] },
-    { path: 'search', component: _search_search_component__WEBPACK_IMPORTED_MODULE_9__["SearchComponent"] },
+    { path: 'search', component: _search_search_component__WEBPACK_IMPORTED_MODULE_9__["SearchComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     // { path: 'contacts', component: ContactComponent},// for dev mode....not having to sign in...
     // { path: 'contact-details/:id', component: ContactDetailComponent},
     // { path: 'contact-create', component: ContactCreateComponent },

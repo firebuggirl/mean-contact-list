@@ -79,8 +79,8 @@ app.use(express.static(distDir));
 
 
 
-//app.set('port', process.env.PORT || 7777);
-app.set('port', process.env.PORT || 80);//use port 80 fpr Azure deploy
+app.set('port', process.env.PORT || 7777);
+//app.set('port', process.env.PORT || 80);//use port 80 fpr Azure deploy
 
 const server = app.listen(app.get('port'), () => {
   console.log(`Express running → PORT ${server.address().port}`);

@@ -15,8 +15,9 @@ import { AuthGuard } from "../guard/auth.guard";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'search', component: SearchComponent },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   // { path: 'contacts', component: ContactComponent},// for dev mode....not having to sign in...
   // { path: 'contact-details/:id', component: ContactDetailComponent},
   // { path: 'contact-create', component: ContactCreateComponent },

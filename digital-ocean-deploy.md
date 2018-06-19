@@ -22,7 +22,7 @@ https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digita
 
         - check the email you receive about your server
 
-          - strongly recommend adding an SSH key to your account...Once added, you can select your SSH key and use it when creating future Droplets. This eliminates the need for root passwords altogether, and makes your Droplets much less vulnerable to attack.
+          - `strongly recommend adding an SSH key` to your account...Once added, you can select your SSH key and use it when creating future Droplets. This eliminates the need for root passwords altogether, and makes your Droplets much less vulnerable to attack.
 
 
 
@@ -318,3 +318,15 @@ https://www.digitalocean.com/community/tutorials/webinar-series-building-contain
           ` sudo docker-compose stop
             sudo docker-compose rm -f
             sudo docker network remove  meancontactlist_nodeapp-network `
+
+
+
+## Turn off Droplet
+
+
+    - powering off your Droplet through the command line = better
+
+
+          ` sudo shutdown -h now `
+
+    - when you power off your Droplet you are still billed for it ...because your diskspace, CPU, RAM, and IP address are all reserved while it is powered off.
