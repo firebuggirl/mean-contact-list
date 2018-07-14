@@ -306,9 +306,7 @@ __webpack_require__.r(__webpack_exports__);
 //import { environment } from '../../environments/environment';
 var AUTH_CONFIG = {
     clientID: 'QHWVXznSaFNIB47Zbrn2A4DC5AobbVnQ',
-    domain: 'juliettet.auth0.com'
-    //callbackURL: 'http://localhost:7777'
-    ,
+    domain: 'juliettet.auth0.com',
     //callbackURL: 'http://localhost:7777'
     callbackURL: 'https://ang6-crud.herokuapp.com/'
     //callbackURL: 'http://aci-demo-juliettet.eastus.azurecontainer.io/'
@@ -702,7 +700,7 @@ var ContactService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n\n.paginationDiv{\n  margin-top: 1rem;\n}\n"
+module.exports = "\n\n/* Note: overcome Angular's view encapsulation w/ the /deep/ operator\nhttps://www.npmjs.com/package/ngx-pagination#styling */\n\n.paginationDiv{\n  margin-top: 1rem;\n}\n\n.my-pagination /deep/ .ngx-pagination .current {\n  background: #930303;\n}\n\n.my-pagination /deep/ .ngx-pagination li{\n  background: #403f45;\n}\n\n.my-pagination /deep/ .ngx-pagination li a{\n  color: beige;\n}\n\n.my-pagination /deep/ .ngx-pagination li a:hover{\n  background: #c03131;\n}\n"
 
 /***/ }),
 
@@ -713,7 +711,7 @@ module.exports = "\n\n\n.paginationDiv{\n  margin-top: 1rem;\n}\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"contactlist\" >\n  <h1 class=\"title\">Contact List\n    <a [routerLink]=\"['/contact-create']\" class=\"button is-link is-outlined\"><i class=\"fas fa-plus\"></i>Add</a>\n  </h1>\n  <table  >\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Phone</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Zipcode</th>\n        <!-- <th>Work</th>\n        <th>Mobile</th> -->\n      </tr>\n    </thead>\n    <!-- <tbody>\n      <tr *ngFor=\"let contact of contacts\">\n        <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n        <td>{{ contact.email }}</td>\n        <td>{{ contact.phone }}</td>\n        <td>{{ contact.address }}</td>\n        <td>{{ contact.city }}</td>\n        <td>{{ contact.state }}</td>\n        <td>{{ contact.zipcode }}</td>\n      </tr>\n    </tbody>\n  </table> -->\n\n<!-- <app-paginator [page]=\"page | async\" (pageChange)=\"onPageChanged($event)\"></app-paginator> -->\n  <!-- <app-paginator [page]=\"page | async\" (pageChange)=\"onPageChanged($event)\"></app-paginator> -->\n\n  <tbody>\n  <tr *ngFor=\"let contact of contacts | paginate: { itemsPerPage: 10,\n                                                    currentPage: page,\n                                                    totalItems: totalRec }\">\n  <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n  <td>{{ contact.email }}</td>\n  <td>{{ contact.phone }}</td>\n  <td>{{ contact.address }}</td>\n  <td>{{ contact.city }}</td>\n  <td>{{ contact.state }}</td>\n  <td>{{ contact.zipcode }}</td>\n  </tr>\n  </tbody>\n  </table>\n\n<div class=\"paginationDiv\">\n  <pagination-controls  maxSize=\"5\" directionLinks=\"true\" (pageChange)=\"page = $event\"></pagination-controls>\n  </div>\n</div>\n"
+module.exports = "\n\n<div class=\"contactlist\" >\n  <h1 class=\"title\">Contact List\n    <a [routerLink]=\"['/contact-create']\" class=\"button is-link is-outlined\"><i class=\"fas fa-plus\"></i>Add</a>\n  </h1>\n  <table  >\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Phone</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Zipcode</th>\n      </tr>\n    </thead>\n\n\n  <tbody>\n  <tr *ngFor=\"let contact of contacts | paginate: { itemsPerPage: 10,\n                                                    currentPage: page,\n                                                    totalItems: totalRec }\">\n  <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n  <td>{{ contact.email }}</td>\n  <td>{{ contact.phone }}</td>\n  <td>{{ contact.address }}</td>\n  <td>{{ contact.city }}</td>\n  <td>{{ contact.state }}</td>\n  <td>{{ contact.zipcode }}</td>\n  </tr>\n  </tbody>\n  </table>\n\n<div class=\"paginationDiv\">\n  <pagination-controls class=\"my-pagination\" maxSize=\"5\" directionLinks=\"true\" (pageChange)=\"page = $event\"></pagination-controls>\n  </div>\n</div>\n"
 
 /***/ }),
 

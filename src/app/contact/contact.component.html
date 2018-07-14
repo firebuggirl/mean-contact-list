@@ -14,25 +14,9 @@
         <th>City</th>
         <th>State</th>
         <th>Zipcode</th>
-        <!-- <th>Work</th>
-        <th>Mobile</th> -->
       </tr>
     </thead>
-    <!-- <tbody>
-      <tr *ngFor="let contact of contacts">
-        <td><a class="button is-text" [routerLink]="['/contact-details', contact._id]">{{ contact.name }}</a></td>
-        <td>{{ contact.email }}</td>
-        <td>{{ contact.phone }}</td>
-        <td>{{ contact.address }}</td>
-        <td>{{ contact.city }}</td>
-        <td>{{ contact.state }}</td>
-        <td>{{ contact.zipcode }}</td>
-      </tr>
-    </tbody>
-  </table> -->
 
-<!-- <app-paginator [page]="page | async" (pageChange)="onPageChanged($event)"></app-paginator> -->
-  <!-- <app-paginator [page]="page | async" (pageChange)="onPageChanged($event)"></app-paginator> -->
 
   <tbody>
   <tr *ngFor="let contact of contacts | paginate: { itemsPerPage: 10,
@@ -50,6 +34,6 @@
   </table>
 
 <div class="paginationDiv">
-  <pagination-controls  maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  <pagination-controls class="my-pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
   </div>
 </div>
