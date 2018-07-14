@@ -54,12 +54,15 @@ router.get('/', (req, res) => {
     res.status(200).json({ status: 200, result: 'success' });
 });
 
-// GET ALL contacts
+
+
+//router.get('/contact', catchErrors(contactController.getContacts));
+
+ // GET ALL contacts
 router.get('/contact', (req, res, next) => {
     Contact.find((err, contacts) => (err) ? next(err) : res.json(contacts));
 });
 
-//router.get('/contact', contactController.getContacts);
 
 // GET A Contact
 router.get('/contact/:id', (req, res, next) => {

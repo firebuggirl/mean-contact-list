@@ -32,7 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     - in one terminal run ` ng build --watch `
 
-    - in 2nd terminal run ` npm run server `
+    - in 2nd terminal run ` npm run serve `
 
 
 ## Load Sample Data
@@ -199,3 +199,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
         ` ng g c login `
 
         ` ng g c callback `
+
+
+## Pagination
+
+    https://github.com/michaelbromley/ngx-pagination#server-side-paging

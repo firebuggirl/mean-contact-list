@@ -8,7 +8,6 @@ const jwtAuthz = require('express-jwt-authz');
 const jwksRsa = require('jwks-rsa');
 const cors = require('cors');
 
-//const routes = require('./routes/index');
 const angular = require('./routes/angular');
 const api = require('./routes/api');
 //const helpers = require('./helpers');
@@ -19,7 +18,6 @@ const mongoose = require('mongoose');
 //const cookieParser = require('cookie-parser');
 //
 
-//app.use('/', routes);
 
 // ******************************************
 // ROUTES

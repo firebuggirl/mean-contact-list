@@ -18,6 +18,7 @@
       <li class="nav-item">
         <a class="btn btn-danger" routerLink="/search" routerLinkActive="active">Search</a>
       </li>
+      
       <li class="nav-item"><h4 *ngIf="auth.isAuthenticated() ; else nologin">
             <a (click)="auth.logout()"  class="btn btn-warning">Log Out</a>
            </h4>

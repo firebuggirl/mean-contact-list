@@ -122,8 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _callback_callback_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./callback/callback.component */ "./src/app/callback/callback.component.ts");
 /* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./search/search.component */ "./src/app/search/search.component.ts");
-/* harmony import */ var _pagination_pagination_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pagination/pagination.component */ "./src/app/pagination/pagination.component.ts");
-/* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
+/* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,7 +152,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
+//import { PaginationComponent } from './pagination/pagination.component';
 //import { ContactSearchComponent } from './contact-search/contact-search.component';
 
 var AppModule = /** @class */ (function () {
@@ -172,8 +171,8 @@ var AppModule = /** @class */ (function () {
                 _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_10__["ContactEditComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"],
                 _callback_callback_component__WEBPACK_IMPORTED_MODULE_20__["CallbackComponent"],
-                _search_search_component__WEBPACK_IMPORTED_MODULE_21__["SearchComponent"],
-                _pagination_pagination_component__WEBPACK_IMPORTED_MODULE_22__["PaginationComponent"]
+                _search_search_component__WEBPACK_IMPORTED_MODULE_21__["SearchComponent"]
+                //PaginationComponent
                 //ContactSearchComponent
             ],
             imports: [
@@ -182,7 +181,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_14__["HttpModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
-                ngx_pagination__WEBPACK_IMPORTED_MODULE_23__["NgxPaginationModule"],
+                ngx_pagination__WEBPACK_IMPORTED_MODULE_22__["NgxPaginationModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"].forRoot()
             ],
             providers: [_auth_auth_service__WEBPACK_IMPORTED_MODULE_18__["AuthService"], _contact_service__WEBPACK_IMPORTED_MODULE_12__["ContactService"], _guard_auth_guard__WEBPACK_IMPORTED_MODULE_17__["AuthGuard"], _message_service__WEBPACK_IMPORTED_MODULE_13__["MessageService"]],
@@ -307,7 +306,9 @@ __webpack_require__.r(__webpack_exports__);
 //import { environment } from '../../environments/environment';
 var AUTH_CONFIG = {
     clientID: 'QHWVXznSaFNIB47Zbrn2A4DC5AobbVnQ',
-    domain: 'juliettet.auth0.com',
+    domain: 'juliettet.auth0.com'
+    //callbackURL: 'http://localhost:7777'
+    ,
     //callbackURL: 'http://localhost:7777'
     callbackURL: 'https://ang6-crud.herokuapp.com/'
     //callbackURL: 'http://aci-demo-juliettet.eastus.azurecontainer.io/'
@@ -620,7 +621,10 @@ var ContactService = /** @class */ (function () {
         this.contactsUrl = 'api/contacts'; // URL to web api
     }
     // GET ALL ContactS
-    ContactService.prototype.getAllContacts = function () {
+    // getAllContacts(): Observable<Contact[]> {
+    //   return this.http.get<Contact[]>('api/contact');
+    // }
+    ContactService.prototype.getPaginatedContacts = function () {
         return this.http.get('api/contact');
     };
     // GET A Contact
@@ -691,6 +695,17 @@ var ContactService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/contact/contact.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/contact/contact.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n\n\n.paginationDiv{\n  margin-top: 1rem;\n}\n"
+
+/***/ }),
+
 /***/ "./src/app/contact/contact.component.html":
 /*!************************************************!*\
   !*** ./src/app/contact/contact.component.html ***!
@@ -698,7 +713,7 @@ var ContactService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"contactlist\" >\n  <h1 class=\"title\">Contact List\n    <a [routerLink]=\"['/contact-create']\" class=\"button is-link is-outlined\"><i class=\"fas fa-plus\"></i>Add</a>\n  </h1>\n  <table  >\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Phone</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Zipcode</th>\n        <!-- <th>Work</th>\n        <th>Mobile</th> -->\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let contact of contacts\">\n        <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n        <td>{{ contact.email }}</td>\n        <td>{{ contact.phone }}</td>\n        <td>{{ contact.address }}</td>\n        <td>{{ contact.city }}</td>\n        <td>{{ contact.state }}</td>\n        <td>{{ contact.zipcode }}</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n</div>\n"
+module.exports = "\n\n<div class=\"contactlist\" >\n  <h1 class=\"title\">Contact List\n    <a [routerLink]=\"['/contact-create']\" class=\"button is-link is-outlined\"><i class=\"fas fa-plus\"></i>Add</a>\n  </h1>\n  <table  >\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Phone</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Zipcode</th>\n        <!-- <th>Work</th>\n        <th>Mobile</th> -->\n      </tr>\n    </thead>\n    <!-- <tbody>\n      <tr *ngFor=\"let contact of contacts\">\n        <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n        <td>{{ contact.email }}</td>\n        <td>{{ contact.phone }}</td>\n        <td>{{ contact.address }}</td>\n        <td>{{ contact.city }}</td>\n        <td>{{ contact.state }}</td>\n        <td>{{ contact.zipcode }}</td>\n      </tr>\n    </tbody>\n  </table> -->\n\n<!-- <app-paginator [page]=\"page | async\" (pageChange)=\"onPageChanged($event)\"></app-paginator> -->\n  <!-- <app-paginator [page]=\"page | async\" (pageChange)=\"onPageChanged($event)\"></app-paginator> -->\n\n  <tbody>\n  <tr *ngFor=\"let contact of contacts | paginate: { itemsPerPage: 10,\n                                                    currentPage: page,\n                                                    totalItems: totalRec }\">\n  <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n  <td>{{ contact.email }}</td>\n  <td>{{ contact.phone }}</td>\n  <td>{{ contact.address }}</td>\n  <td>{{ contact.city }}</td>\n  <td>{{ contact.state }}</td>\n  <td>{{ contact.zipcode }}</td>\n  </tr>\n  </tbody>\n  </table>\n\n<div class=\"paginationDiv\">\n  <pagination-controls  maxSize=\"5\" directionLinks=\"true\" (pageChange)=\"page = $event\"></pagination-controls>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -714,6 +729,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../contact.service */ "./src/app/contact.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_add_observable_of__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/observable/of */ "./node_modules/rxjs-compat/_esm5/add/observable/of.js");
+/* harmony import */ var rxjs_add_operator_do__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/add/operator/do */ "./node_modules/rxjs-compat/_esm5/add/operator/do.js");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+/* harmony import */ var rxjs_add_operator_delay__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/add/operator/delay */ "./node_modules/rxjs-compat/_esm5/add/operator/delay.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -725,24 +745,31 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
+
+
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent(contactService) {
+    function ContactComponent(contactService, http) {
         this.contactService = contactService;
-        this.totalRecords = 0;
-        this.pageSize = 10;
+        this.http = http;
+        this.page = 1;
     }
     ContactComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.contactService.getAllContacts()
+        this.contactService.getPaginatedContacts()
             .subscribe(function (data) { return _this.contacts = data; });
     };
     ContactComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-contact',
             template: __webpack_require__(/*! ./contact.component.html */ "./src/app/contact/contact.component.html"),
-            styles: []
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].Default,
+            styles: [__webpack_require__(/*! ./contact.component.css */ "./src/app/contact/contact.component.css")]
         }),
-        __metadata("design:paramtypes", [_contact_service__WEBPACK_IMPORTED_MODULE_1__["ContactService"]])
+        __metadata("design:paramtypes", [_contact_service__WEBPACK_IMPORTED_MODULE_1__["ContactService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], ContactComponent);
     return ContactComponent;
 }());
@@ -965,7 +992,7 @@ var MessageService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div>\n<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">MEAN</a>\n  <button class=\"navbar-toggler d-lg-none\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarsExampleDefault\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \">\n        <a class=\"btn btn-warning\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/contacts\" routerLinkActive=\"active\">Contacts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n      </li>\n      <li class=\"nav-item\"><h4 *ngIf=\"auth.isAuthenticated() ; else nologin\">\n            <a (click)=\"auth.logout()\"  class=\"btn btn-warning\">Log Out</a>\n           </h4>\n           <ng-template #nologin>\n            <h4>\n               <a (click)=\"auth.login()\" class=\"btn btn-success\" >Log In</a>\n            </h4>\n            </ng-template>\n      </li>\n\n    </ul>\n    <!-- <form class=\"form-inline mt-2 mt-md-0\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search Contacts...\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n\n          <ul class=\"search-result\">\n            <li *ngFor=\"let contact of contacts | async\" >\n              <a [routerLink]=\"['/contact-details', contact._id]\">\n                {{contact.name}}\n              </a>\n            </li>\n          </ul>\n    </form> -->\n  </div>\n</nav>\n<div class='container'>\n    <router-outlet></router-outlet>\n</div>\n</div>\n"
+module.exports = "\n\n<div>\n<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">MEAN</a>\n  <button class=\"navbar-toggler d-lg-none\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarsExampleDefault\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \">\n        <a class=\"btn btn-warning\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/contacts\" routerLinkActive=\"active\">Contacts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n      </li>\n      \n      <li class=\"nav-item\"><h4 *ngIf=\"auth.isAuthenticated() ; else nologin\">\n            <a (click)=\"auth.logout()\"  class=\"btn btn-warning\">Log Out</a>\n           </h4>\n           <ng-template #nologin>\n            <h4>\n               <a (click)=\"auth.login()\" class=\"btn btn-success\" >Log In</a>\n            </h4>\n            </ng-template>\n      </li>\n\n    </ul>\n    <!-- <form class=\"form-inline mt-2 mt-md-0\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search Contacts...\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n\n          <ul class=\"search-result\">\n            <li *ngFor=\"let contact of contacts | async\" >\n              <a [routerLink]=\"['/contact-details', contact._id]\">\n                {{contact.name}}\n              </a>\n            </li>\n          </ul>\n    </form> -->\n  </div>\n</nav>\n<div class='container'>\n    <router-outlet></router-outlet>\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -1103,71 +1130,6 @@ var NotFoundComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pagination/pagination.component.css":
-/*!*****************************************************!*\
-  !*** ./src/app/pagination/pagination.component.css ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/pagination/pagination.component.html":
-/*!******************************************************!*\
-  !*** ./src/app/pagination/pagination.component.html ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ul>\n      <li *ngFor=\"let item of collection | paginate: { itemsPerPage: 10, currentPage: p }\"> ... </li>\n    </ul>\n\n    <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n"
-
-/***/ }),
-
-/***/ "./src/app/pagination/pagination.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/pagination/pagination.component.ts ***!
-  \****************************************************/
-/*! exports provided: PaginationComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginationComponent", function() { return PaginationComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var PaginationComponent = /** @class */ (function () {
-    //collection: any[] = someArrayOfThings;
-    function PaginationComponent() {
-        this.p = 1;
-    }
-    PaginationComponent.prototype.ngOnInit = function () {
-    };
-    PaginationComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-pagination',
-            template: __webpack_require__(/*! ./pagination.component.html */ "./src/app/pagination/pagination.component.html"),
-            styles: [__webpack_require__(/*! ./pagination.component.css */ "./src/app/pagination/pagination.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], PaginationComponent);
-    return PaginationComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/routing/routing.module.ts":
 /*!*******************************************!*\
   !*** ./src/app/routing/routing.module.ts ***!
@@ -1211,7 +1173,7 @@ var routes = [
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_2__["LoginComponent"] },
     { path: 'search', component: _search_search_component__WEBPACK_IMPORTED_MODULE_9__["SearchComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    // { path: 'contacts', component: ContactComponent},// for dev mode....not having to sign in...
+    //{ path: 'contacts', component: ContactComponent},// for dev mode....not having to sign in...
     // { path: 'contact-details/:id', component: ContactDetailComponent},
     // { path: 'contact-create', component: ContactCreateComponent },
     // { path: 'contact-edit/:id', component: ContactEditComponent },
@@ -1219,7 +1181,7 @@ var routes = [
     { path: 'contact-details/:id', component: _contact_detail_contact_detail_component__WEBPACK_IMPORTED_MODULE_5__["ContactDetailComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'contact-create', component: _contact_create_contact_create_component__WEBPACK_IMPORTED_MODULE_6__["ContactCreateComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'contact-edit/:id', component: _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_7__["ContactEditComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"] }
+    { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

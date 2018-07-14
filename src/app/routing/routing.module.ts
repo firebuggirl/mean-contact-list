@@ -11,6 +11,8 @@ import { ContactEditComponent } from '../contact-edit/contact-edit.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { SearchComponent } from '../search/search.component';
 
+
+
 import { AuthGuard } from "../guard/auth.guard";
 
 const routes: Routes = [
@@ -18,15 +20,16 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
-  // { path: 'contacts', component: ContactComponent},// for dev mode....not having to sign in...
+  //{ path: 'contacts', component: ContactComponent},// for dev mode....not having to sign in...
   // { path: 'contact-details/:id', component: ContactDetailComponent},
   // { path: 'contact-create', component: ContactCreateComponent },
   // { path: 'contact-edit/:id', component: ContactEditComponent },
-  { path: 'contacts', component: ContactComponent, canActivate: [AuthGuard] },
+  { path: 'contacts', component: ContactComponent, canActivate: [AuthGuard]},
   { path: 'contact-details/:id', component: ContactDetailComponent, canActivate: [AuthGuard] },
   { path: 'contact-create', component: ContactCreateComponent, canActivate: [AuthGuard] },
   { path: 'contact-edit/:id', component: ContactEditComponent, canActivate: [AuthGuard] },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
+
 ];
 
 @NgModule({

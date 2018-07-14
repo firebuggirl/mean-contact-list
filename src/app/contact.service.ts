@@ -20,7 +20,11 @@ export class ContactService {
 
 
   // GET ALL ContactS
-  getAllContacts(): Observable<Contact[]> {
+  // getAllContacts(): Observable<Contact[]> {
+  //   return this.http.get<Contact[]>('api/contact');
+  // }
+
+  getPaginatedContacts(): Observable<Contact[]> {
     return this.http.get<Contact[]>('api/contact');
   }
 
@@ -28,6 +32,8 @@ export class ContactService {
   getContact(id: string): Observable<Contact> {
     return this.http.get<Contact>(`api/contact/${id}`);
   }
+
+
 
   // SAVE A Contact
   insertContact(contact: Contact): Observable<Contact> {

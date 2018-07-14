@@ -29,17 +29,27 @@ exports.searchContacts = async (req, res) => {
 };
 
 
-// exports.getContacts = async function(req, res, next){
-//
-//     var page = req.query.page ? req.query.page : 1
-//     var limit = req.query.limit ? req.query.limit : 10;
-//
-//     console.log(page, limit)
-//
-//     try{
-//         var contacts = await ContactsService.getContacts({}, page, limit)
-//         return res.status(200).json({status: 200, data: contacts, message: "Succesfully Contacts Recieved"});
-//     }catch(e){
-//         return res.status(400).json({status: 400, message: e.message});
-//     }
-// }
+exports.getContacts = async (req, res) => {
+  const page = req.params.page || 1; //home page url = 1
+  const limit = 10;
+  const skip = (page * limit) - limit; //skip 1st 20 if on page #2, etc...
+
+  // 1. Query the database for a list of all contacts
+  const contactsPromise = Contact
+    .find()
+    .skip(skip)
+    .limit(limit)
+    .sort({ created: 'desc' }); //sort descending...show latest contact 1st
+
+  const countPromise = Contact.count();//get count of all Contacts in database
+//Fire off contactsPromise & countPromise @ same time BUT 'wait' for both to come back
+  const [contacts, count] = await Promise.all([contactsPromise, countPromise]); //pass in array of promises
+  const pages = Math.ceil(count / limit); //get upper limit of # contacts / how many per page
+  if (!contacts.length && skip) {//redirect to last page of pagination if page requested does not exist
+
+    //res.redirect(`/contacts/page/${pages}`);
+    return;
+  }
+  res.json(contacts, page, pages, count);
+
+};
