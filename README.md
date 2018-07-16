@@ -219,9 +219,12 @@ https://github.com/prerender/prerender-node
 
       ` app.use(require('prerender-node').set('prerenderToken', 'YOUR_TOKEN')); `
 
- - in `Heroku` Config variables UI:
+  - in `Heroku` Config variables UI:
 
  `  heroku config:set PRERENDER_TOKEN=YOUR_TOKEN `
+
+
+  -  add ` <meta name="fragment" content="!"> ` to the <head> of all of your pages
 
   * Testing locally:
 
