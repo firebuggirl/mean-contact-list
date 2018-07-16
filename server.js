@@ -36,7 +36,7 @@ app.use('/api', api);
 //   next();
 // });
 
-app.use(require('prerender-node').set('prerenderToken', 'QwMjVqwKabGeSVuiDwBX'));
+app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
 
 app.use(helmet());//get security report here: https://securityheaders.io/
 app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
