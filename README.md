@@ -217,6 +217,8 @@ https://github.com/prerender/prerender-node
 
   - Or if you have a token/account on `prerender.io`:
 
+  - https://prerender.io/
+
       ` app.use(require('prerender-node').set('prerenderToken', 'YOUR_TOKEN')); `
 
   - in `Heroku` Config variables UI:
