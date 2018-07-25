@@ -8,7 +8,8 @@ WORKDIR   /var/www
 
 
 RUN npm install nodemon -g
-RUN npm install
+
+
 
 EXPOSE 7777
 

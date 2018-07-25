@@ -36,7 +36,14 @@ app.use('/api', api);
 //   next();
 // });
 
-app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
+// manually modify middleware to check for Googlebot by their user agent directly
+// https://prerender.io/documentation/google-support
+const prerender = require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN);
+prerender.crawlerUserAgents.push('googlebot');
+prerender.crawlerUserAgents.push('bingbot');
+prerender.crawlerUserAgents.push('yandex');
+
+//app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
 
 app.use(helmet());//get security report here: https://securityheaders.io/
 app.use(helmet.referrerPolicy({ policy: 'same-origin' }));

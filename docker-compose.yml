@@ -26,7 +26,7 @@ services:
   #No authentication is provided here - just a demo! Read/search
   #for more information about adding authentication. Also, container names need to be unique
   mongodb:
-    container_name: meanangularcontact
+    container_name: mongodang6crud
     image: mongo
     networks:
       - nodeapp-network
