@@ -38,10 +38,13 @@ app.use('/api', api);
 
 // manually modify middleware to check for Googlebot by their user agent directly
 // https://prerender.io/documentation/google-support
+// have been some reported issues with Googlebot rendering JavaScript on the first
+// request to a URL that still uses the ?_escaped_fragment_= protocol
 const prerender = require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN);
 prerender.crawlerUserAgents.push('googlebot');
 prerender.crawlerUserAgents.push('bingbot');
 prerender.crawlerUserAgents.push('yandex');
+app.use(prerender);
 
 //app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
 
