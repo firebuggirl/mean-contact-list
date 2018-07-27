@@ -156,7 +156,7 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
 
               - Do not disconnect until you confirm that you can successfully log in via SSH!!!!!!!
 
-              - n a new terminal on your local machine, log in to your server using the new account that we created:
+              - in a new terminal on your local machine, log in to your server using the new account that we created:
 
               ` ssh <my-user-name+serverIP> `
 

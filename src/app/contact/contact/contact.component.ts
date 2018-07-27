@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from '../contact.service';
-import { Contact } from '../models/Contact';
+import { ContactService } from '../../contact.service';
+import { Contact } from '../../models/Contact';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 import {ChangeDetectionStrategy, Input} from "@angular/core";

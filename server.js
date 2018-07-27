@@ -46,6 +46,8 @@ prerender.crawlerUserAgents.push('bingbot');
 prerender.crawlerUserAgents.push('yandex');
 app.use(prerender);
 
+
+
 //app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
 
 app.use(helmet());//get security report here: https://securityheaders.io/

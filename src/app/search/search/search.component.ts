@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -9,8 +9,8 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
- import { Contact } from '../models/Contact';
- import { ContactService } from '../contact.service';
+ import { Contact } from '../../models/Contact';
+ import { ContactService } from '../../contact.service';
 
 @Component({
   selector: 'app-search',
@@ -28,8 +28,9 @@ export class SearchComponent implements OnInit {
 constructor(public auth: AuthService,
             public http: HttpClient,
             private contactService: ContactService,
-             private router: Router,
-             private route: ActivatedRoute) {
+            private router: Router,
+            private route: ActivatedRoute
+            ) {
 
    auth.handleAuthentication();
  }

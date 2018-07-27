@@ -5,21 +5,33 @@
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
   \**********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncaught exception popping up in devtools
-	return Promise.resolve().then(function() {
-		var e = new Error('Cannot find module "' + req + '".');
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
+var map = {
+	"../search/lazy-search.module": [
+		"./src/app/search/lazy-search.module.ts",
+		"search-lazy-search-module"
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids) {
+		return Promise.resolve().then(function() {
+			var e = new Error('Cannot find module "' + req + '".');
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+	return __webpack_require__.e(ids[1]).then(function() {
+		var module = __webpack_require__(ids[0]);
+		return module;
 	});
 }
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
+module.exports = webpackAsyncContext;
 
 /***/ }),
 
@@ -990,7 +1002,7 @@ var MessageService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div>\n<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">MEAN</a>\n  <button class=\"navbar-toggler d-lg-none\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarsExampleDefault\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \">\n        <a class=\"btn btn-warning\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/contacts\" routerLinkActive=\"active\">Contacts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n      </li>\n      \n      <li class=\"nav-item\"><h4 *ngIf=\"auth.isAuthenticated() ; else nologin\">\n            <a (click)=\"auth.logout()\"  class=\"btn btn-warning\">Log Out</a>\n           </h4>\n           <ng-template #nologin>\n            <h4>\n               <a (click)=\"auth.login()\" class=\"btn btn-success\" >Log In</a>\n            </h4>\n            </ng-template>\n      </li>\n\n    </ul>\n    <!-- <form class=\"form-inline mt-2 mt-md-0\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search Contacts...\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n\n          <ul class=\"search-result\">\n            <li *ngFor=\"let contact of contacts | async\" >\n              <a [routerLink]=\"['/contact-details', contact._id]\">\n                {{contact.name}}\n              </a>\n            </li>\n          </ul>\n    </form> -->\n  </div>\n</nav>\n<div class='container'>\n    <router-outlet></router-outlet>\n</div>\n</div>\n"
+module.exports = "\n\n<div>\n<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">MEAN</a>\n  <button class=\"navbar-toggler d-lg-none\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarsExampleDefault\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \">\n        <a class=\"btn btn-warning\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/contacts\" routerLinkActive=\"active\">Contacts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n      </li>\n\n      <li class=\"nav-item\"><h4 *ngIf=\"auth.isAuthenticated() ; else nologin\">\n            <a (click)=\"auth.logout()\"  class=\"btn btn-warning\">Log Out</a>\n           </h4>\n           <ng-template #nologin>\n            <h4>\n               <a (click)=\"auth.login()\" class=\"btn btn-success\" >Log In</a>\n            </h4>\n            </ng-template>\n      </li>\n\n    </ul>\n    <!-- <form class=\"form-inline mt-2 mt-md-0\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search Contacts...\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n\n          <ul class=\"search-result\">\n            <li *ngFor=\"let contact of contacts | async\" >\n              <a [routerLink]=\"['/contact-details', contact._id]\">\n                {{contact.name}}\n              </a>\n            </li>\n          </ul>\n    </form> -->\n  </div>\n</nav>\n<div class='container'>\n    <router-outlet></router-outlet>\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -1171,11 +1183,19 @@ var routes = [
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_2__["LoginComponent"] },
     { path: 'search', component: _search_search_component__WEBPACK_IMPORTED_MODULE_9__["SearchComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    // {
+    //   path: 'search',
+    //   loadChildren: '../search/lazy-search.module#LazySearchModule'
+    // },
     //{ path: 'contacts', component: ContactComponent},// for dev mode....not having to sign in...
     // { path: 'contact-details/:id', component: ContactDetailComponent},
     // { path: 'contact-create', component: ContactCreateComponent },
     // { path: 'contact-edit/:id', component: ContactEditComponent },
     { path: 'contacts', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_4__["ContactComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    // {
+    //   path: 'contacts',
+    //   loadChildren: '../contact/lazy-contact.module#LazyContactModule'
+    // },
     { path: 'contact-details/:id', component: _contact_detail_contact_detail_component__WEBPACK_IMPORTED_MODULE_5__["ContactDetailComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'contact-create', component: _contact_create_contact_create_component__WEBPACK_IMPORTED_MODULE_6__["ContactCreateComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'contact-edit/:id', component: _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_7__["ContactEditComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },

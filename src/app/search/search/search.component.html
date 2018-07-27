@@ -4,12 +4,9 @@
 
     <form class="search">
       <input #searchBox type="text" name="search" placeholder="Search by name or state" id="search-box" (keyup)="search(searchBox.value)" />
-
-
     </form>
+</div>
 
-
-  </div>
 <div id="searchUL">
   <ul class="search-result">
     <li *ngFor="let contact of contacts | async" >
