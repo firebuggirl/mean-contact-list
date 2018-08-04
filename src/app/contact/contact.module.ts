@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';//have to import this hear...ie., instead of app.module..due to lazy loading
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';//have to import this here...ie., instead of app.module..due to lazy loading
 
 @NgModule({
   imports: [
