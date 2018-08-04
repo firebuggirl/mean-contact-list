@@ -260,6 +260,7 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_2__["HttpModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 ngx_pagination__WEBPACK_IMPORTED_MODULE_17__["NgxPaginationModule"],
@@ -388,8 +389,8 @@ __webpack_require__.r(__webpack_exports__);
 var AUTH_CONFIG = {
     clientID: 'QHWVXznSaFNIB47Zbrn2A4DC5AobbVnQ',
     domain: 'juliettet.auth0.com',
-    //callbackURL: 'http://localhost:7777'
-    callbackURL: 'https://ang6-crud.herokuapp.com/'
+    callbackURL: 'http://localhost:7777'
+    //callbackURL:'https://ang6-crud.herokuapp.com/'
     //callbackURL: 'http://aci-demo-juliettet.eastus.azurecontainer.io/'
     //callbackURL: 'http://138.68.230.240:32780/' //DigitalOcean Test
 };

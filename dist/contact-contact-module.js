@@ -308,6 +308,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _contact_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact-routing.module */ "./src/app/contact/contact-routing.module.ts");
 /* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact/contact.component.ts");
 /* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -319,6 +320,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+ //have to import this hear...ie., instead of app.module..due to lazy loading
 var ContactModule = /** @class */ (function () {
     function ContactModule() {
     }
@@ -327,7 +329,9 @@ var ContactModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                 _contact_routing_module__WEBPACK_IMPORTED_MODULE_2__["ContactRoutingModule"],
-                ngx_pagination__WEBPACK_IMPORTED_MODULE_4__["NgxPaginationModule"]
+                ngx_pagination__WEBPACK_IMPORTED_MODULE_4__["NgxPaginationModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"]
             ],
             declarations: [_contact_contact_component__WEBPACK_IMPORTED_MODULE_3__["ContactComponent"]]
         })

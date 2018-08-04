@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { ContactEditRoutingModule } from './contact-edit-routing.module';
 import { ContactEditComponent } from './contact-edit/contact-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';//have to import this hear...ie., instead of app.module..due to lazy loading
 
 @NgModule({
   imports: [
     CommonModule,
-    ContactEditRoutingModule
+    ContactEditRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [ContactEditComponent]
 })
