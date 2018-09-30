@@ -317,3 +317,17 @@ https://github.com/prerender/prerender-node
 
 
       ` localhost:7777/?_escaped_fragment_= `
+
+
+## Check for vulnerabilities
+
+
+      ` snyk test `
+
+
+      - OR
+
+
+      ` npm audit `
+
+      ` npm audit fix `

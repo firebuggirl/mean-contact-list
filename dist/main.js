@@ -33,14 +33,14 @@ function webpackAsyncContext(req) {
 	var ids = map[req];
 	if(!ids) {
 		return Promise.resolve().then(function() {
-			var e = new Error('Cannot find module "' + req + '".');
+			var e = new Error("Cannot find module '" + req + "'");
 			e.code = 'MODULE_NOT_FOUND';
 			throw e;
 		});
 	}
 	return __webpack_require__.e(ids[1]).then(function() {
-		var module = __webpack_require__(ids[0]);
-		return module;
+		var id = ids[0];
+		return __webpack_require__(id);
 	});
 }
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
