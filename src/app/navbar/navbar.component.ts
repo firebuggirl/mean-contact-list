@@ -29,9 +29,9 @@ export class NavbarComponent implements OnInit{
 
     public isCollapsed = true;
 
-  constructor(public auth: AuthService,
-              public http: HttpClient,
-              private contactService: ContactService,
+  constructor( public auth: AuthService,
+               public http: HttpClient,
+               private contactService: ContactService,
                private router: Router,
                private route: ActivatedRoute) {
 

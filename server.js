@@ -67,7 +67,7 @@ if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
 app.use(cors());
 
 const checkJwt = jwt({
-  // Dynamically provide a signing key based on the kid in the header and the signing keys provided by the JWKS endpoint.
+  // Dynamically provide a signing key based on the key in the header and the signing keys provided by the JWKS endpoint.
   secret: jwksRsa.expressJwtSecret({
     cache: true,
     rateLimit: true,
@@ -86,6 +86,7 @@ const checkScopes = jwtAuthz(['read:messages']);
 // Create link to Angular build directory
 const distDir = __dirname + "/dist/";
 //var distDir = __dirname + "/src/";
+app.use(express.static(distDir));
 app.use(express.static(distDir));
 
 

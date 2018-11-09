@@ -167,7 +167,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
               https://docs.mongodb.com/manual/tutorial/configure-ssl/
 
-             MongoDB does not store the password in cleartext. ..only vulnerable in transit.. and only if TLS transpory is not enabled.
+             MongoDB does not store the password in cleartext. ..only vulnerable in transit.. and only if TLS transport is not enabled.
 
 
 

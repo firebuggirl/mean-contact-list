@@ -2,7 +2,7 @@
 
 https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digitalocean-droplet
 
-- DigitalOcean calls its cloud servers Droplets
+- DigitalOcean calls its cloud servers `Droplets`
 
 - How To Connect To Your Droplet with SSH:
 
@@ -14,11 +14,11 @@ https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digita
 
 
 
-    - The Droplet's IP address - get via DigitalOcean control panel
+    - The Droplet's `IP address` - get via DigitalOcean control panel
 
-    - The default username on the server
+    - The `default username` on the server
 
-    - The default password for that username
+    - The `default password` for that username
 
         - check the email you receive about your server
 
@@ -47,9 +47,9 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
 
       - `root` password = `<my-newPsswrd>`
 
-      - The root user is the administrative user in a Linux environment that has very broad privileges. Because of the heightened privileges of the root account, you are actually discouraged from using it on a regular basis.
+      - The `root user` is the administrative user in a Linux environment that has very broad privileges. Because of the heightened privileges of the root account, you are actually `discouraged from using it` on a regular basis.
 
-      ...because part of the power inherent with the root account is the ability to make very destructive changes, even by accident.
+      ...because part of the power inherent with the root account is the ability to make very destructive changes, even by accident!!!!!
 
       * Step Two — Create a New User
 
@@ -62,7 +62,7 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
 
       * Step Three — Root Privileges
 
-        - To avoid having to log out of our normal user and log back in as the root account, we can set up what is known as "superuser" or root privileges for our normal account. This will allow our normal user to run commands with administrative privileges by putting the word sudo before each command.
+        - To avoid having to log out of our normal user and log back in as the root account, we can set up what is known as `superuser` or `root privileges` for our normal account. This will allow our normal user to run commands with administrative privileges by putting the word sudo before each command.
 
         ` usermod -aG sudo username `//user can run commands with superuser privileges
 
@@ -72,10 +72,10 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
 
 
     * Step Four — Add Public Key Authentication (Recommended)
-    *
-        - increase the security of your server by requiring a private SSH key to log in
 
-        - Generate a Key Pair at the terminal of your local machine (ie. your computer):
+        - increase the security of your server by requiring a `private SSH key` to log in
+
+        - `Generate a Key Pair` at the terminal of your local machine (ie. your computer):
 
 
             ` ssh-keygen `
@@ -84,7 +84,7 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
 
            - next...will be prompted for a passphrase to secure the key with. You may either enter a passphrase or leave the passphrase blank. ...leave blank for now
 
-           - generates a private key, id_rsa, and a public key, id_rsa.pub, in the .ssh directory of the localuser's home directory. Remember that the `private key should not be shared with anyone` who should not have access to your servers!
+           - generates a `private key, id_rsa, and a public key, id_rsa.pub`, in the .ssh directory of the localuser's home directory. Remember that the `private key should not be shared with anyone` who should not have access to your servers!
 
            * Copy the Public Key:
 
@@ -129,7 +129,7 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
 
                 -  increase your server's security
 
-                - restrict SSH access to your server to public key authentication only...only way to log in to your server (aside from the console) is to possess the private key that pairs with the public key that was installed.
+                - `restrict SSH access` to your server to `public key authentication` only...only way to log in to your server (aside from the console) is to possess the private key that pairs with the public key that was installed.
 
 
                 - As `root` or your new `sudo user`(ie., myusername), open the SSH daemon configuration:
