@@ -31,3 +31,32 @@
 - `docker-compose up` - Start containers based on docker-compose
 - `docker-compose stop` - Stop containers
 - `docker-compose down` - Stop and remove containers
+
+
+
+
+
+## Return dangling images:
+
+    - ..often occurs when building a new image and tagging it w/ an existing tag
+
+    ` docker image ls --filter dangling=true `
+
+
+## Delete all dangling images:
+
+
+    ` docker image prune `
+
+    ` docker images prune -a `//also remove all unused images..ie., those not being used by any containers
+
+
+## Other filters:
+
+    `dangling`
+
+    `before` -> requires and image name or ID as an argument & returns all images created before it
+
+    `since` -> same as above, but returns images created after the specified image
+
+    `label` -> filter images by label &/or label/value
