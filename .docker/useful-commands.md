@@ -60,3 +60,8 @@
     `since` -> same as above, but returns images created after the specified image
 
     `label` -> filter images by label &/or label/value
+
+
+    ## Delete unused volumes
+
+        ` docker volume prune `
