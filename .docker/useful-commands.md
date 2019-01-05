@@ -137,3 +137,8 @@
     ## Assignment Answers: Edit Code Running In Containers With Bind Mounts
 
     docker run -p 80:4000 -v $(pwd):/site bretfisher/jekyll-serve `
+
+##  Look at running processes inside container
+
+    ` docker container top <image-name>
+    `

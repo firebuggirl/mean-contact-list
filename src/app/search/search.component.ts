@@ -42,7 +42,7 @@ search(term: string) {
 
 ngOnInit() {
 
-  this.contacts = this.searchTerms.pipe(
+ this.contacts = this.searchTerms.pipe(
  // wait 300ms after each keystroke before constermering the term
  debounceTime(300),
 

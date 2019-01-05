@@ -91,15 +91,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     - create `Procfile`
 
-    ` heroku login `
+        ` heroku login `
 
-    `  heroku create ang6-crud `
+        `  heroku create ang6-crud `
 
-    ` heroku git:remote -a ang6-crud `
+        ` heroku git:remote -a ang6-crud `
 
-    `  heroku config:add NODE_ENV=production `
+        `  heroku config:add NODE_ENV=production `
 
-    ` heroku logs `//check for deployment errors
+        ` heroku logs `//check for deployment errors
 
     - add `Node Buildpack` via Heroku UI
 
@@ -331,3 +331,5 @@ https://github.com/prerender/prerender-node
       ` npm audit `
 
       ` npm audit fix `
+
+      - https://go.npm.me/audit-guide

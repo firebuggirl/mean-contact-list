@@ -11,3 +11,10 @@ https://github.com/GoogleChromeLabs/ndb
           - or ` ndb server.js `
 
           - or ` npm run serve `
+
+
+
+- 1/5/19:
+
+      - ` npm update webpack-dev-server --depth 2
+`
