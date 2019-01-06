@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Lazy Load Crud App';
+  title = 'Lazy Load CRUD App';
 
   constructor (
     private router: Router,

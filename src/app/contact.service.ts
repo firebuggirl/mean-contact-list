@@ -41,6 +41,7 @@ export class ContactService {
   }
 
   // UPDATE A Contact
+  // void => a Typescript return type => the method does not return a value
   updateContact(id: string, contact: Contact): Observable<void> {
     return this.http.put<void>(`api/contact/${id}`, contact);
   }
