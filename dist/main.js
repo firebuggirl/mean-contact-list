@@ -173,7 +173,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(router, route) {
         this.router = router;
         this.route = route;
-        this.title = 'Lazy Load Crud App';
+        this.title = 'Lazy Load CRUD App';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -514,6 +514,7 @@ var ContactService = /** @class */ (function () {
         return this.http.post('api/contact', contact);
     };
     // UPDATE A Contact
+    // void => a Typescript return type => the method does not return a value
     ContactService.prototype.updateContact = function (id, contact) {
         return this.http.put("api/contact/" + id, contact);
     };

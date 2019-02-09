@@ -97,9 +97,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
         ` heroku git:remote -a ang6-crud `
 
-        `  heroku config:add NODE_ENV=production `
+        `  heroku config:add NODE_ENV=production
+        `
 
         ` heroku logs `//check for deployment errors
+
+
+
 
     - add `Node Buildpack` via Heroku UI
 
@@ -109,7 +113,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     * Get connection URI:
 
-        ` heroku config:get MONGODB_URI `
+        ` heroku config:get MONGODB_URI
+        `
 
         - change DB connection string in `routes/api.js` + in `data/load-sample-data.js`
 
@@ -141,7 +146,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
             }
           ) `
 
-
+      
 
     - Disconnect the mongo shell.
 
