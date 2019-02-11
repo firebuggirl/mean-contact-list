@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sample": "node ./data/load-sample-data.js",
-    "blowitallaway": "node ./data/load-sample-data.js --delete"
+    "blowitallaway": "node ./data/load-sample-data.js --delete",
+    "heroku-postbuild": "echo Skip builds on Heroku"
   },
   "engines": {
     "node": "10.14.2"
