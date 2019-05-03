@@ -11,6 +11,7 @@ https://help.heroku.com/P5IMU3MP/heroku-node-js-build-script-change-faq
       `   "heroku-postbuild": "echo Skip builds on Heroku"
       `
 
-  - Run to see status by upcoming Heroku changes:
+  - Run to see if app is affected by upcoming Heroku changes:
 
-      ` npx @heroku/update-node-build-script `
+      ` npx @heroku/update-node-build-script
+      `
