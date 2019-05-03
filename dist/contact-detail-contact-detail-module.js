@@ -151,8 +151,7 @@ var ContactDetailComponent = /** @class */ (function () {
     ContactDetailComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-contact-detail',
-            template: __webpack_require__(/*! ./contact-detail.component.html */ "./src/app/contact-detail/contact-detail/contact-detail.component.html"),
-            styles: []
+            template: __webpack_require__(/*! ./contact-detail.component.html */ "./src/app/contact-detail/contact-detail/contact-detail.component.html")
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"]])
     ], ContactDetailComponent);

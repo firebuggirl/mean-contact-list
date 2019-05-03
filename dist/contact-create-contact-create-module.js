@@ -143,8 +143,7 @@ var ContactCreateComponent = /** @class */ (function () {
     ContactCreateComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-contact-create',
-            template: __webpack_require__(/*! ./contact-create.component.html */ "./src/app/contact-create/contact-create/contact-create.component.html"),
-            styles: []
+            template: __webpack_require__(/*! ./contact-create.component.html */ "./src/app/contact-create/contact-create/contact-create.component.html")
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"]])
     ], ContactCreateComponent);
