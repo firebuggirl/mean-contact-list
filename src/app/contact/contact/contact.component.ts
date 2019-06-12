@@ -19,21 +19,6 @@ import 'rxjs/add/operator/delay';
 })
 export class ContactComponent implements OnInit {
 
-  // contacts: Array<any>;
-  // totalRec : number;
-  // page: number = 1;
-  // itemsPerPage: number;
-  //
-  // constructor(private contactService: ContactService, private http: HttpClient) { }
-  //
-  // ngOnInit() {
-  //   // this.contactService.getAllContacts()
-  //   //   .subscribe((data: Contact[]) => this.contacts = data);
-  //
-  //     this.contactService.getPaginatedContacts()
-  //     .subscribe((data: Contact[]) => this.contacts = data);
-  // }
-
 
     contacts: Array<any>;
     totalRec : number;

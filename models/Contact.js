@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
-//var mongoosePaginate = require('mongoose-paginate');
+
 
 var ContactsSchema = new mongoose.Schema({
 
     name: {
       type: String,
-      //type: mongoose.Schema.ObjectId,
       required: true,
       trim: true
     },
@@ -45,5 +44,3 @@ ContactsSchema.index({
 
 var Contact = mongoose.model('Contact', ContactsSchema);//model method creates schema
 module.exports = Contact;
-
-//ContactsSchema.plugin(passportLocalMongoose, { contactnameField: 'email' });

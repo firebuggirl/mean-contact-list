@@ -11,7 +11,6 @@ exports.searchContacts = async (req, res) => {
   .find({
     $text: {//$text operator is available on fields w/ 'text' index
     $search: req.query.name
-    // $search: ''
     }
   }, {
     score: { $meta: 'textScore' } // project score field that has closest match to query

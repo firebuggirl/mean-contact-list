@@ -2,7 +2,6 @@
 const express = require("express");
 const helmet = require('helmet');//initiate security headers
 const app = express();
-//app.use(bodyParser.json());
 const jwt = require('express-jwt');
 const jwtAuthz = require('express-jwt-authz');
 const jwksRsa = require('jwks-rsa');

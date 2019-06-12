@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-//import { Observable } from 'rxjs/Observable';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Contact } from './models/Contact';
@@ -52,25 +51,6 @@ export class ContactService {
   }
 
 
-
-
- //
-//   searchContacts(term: string): Observable<Contact[]> {
-//
-//
-//     if (!term.trim()) {
-//           // if not search id, return empty hero array.
-//           return of([]);
-//         }
-//       //  return this.http.get<Contact[]>(`api/search/?name=${term}`).pipe(
-//        //return this.http.get<Contact[]>(`${this.contactUrl}/${id}/name=${id}`).pipe(
-//       //return this.http.get<Contact[]>(`api/contacts/${id}/name=${id}`).pipe(
-// let data = {limit: "2"};
-//       return this.http.get<Contact[]>(`api/search/`,  {params: data}).pipe(
-//         tap(_ => this.log(`found contacts matching "${term}"`)),
-//         catchError(this.handleError<Contact[]>('searchContacts'))
-//       );
-//  }
 
 searchContacts(term: string): Observable<Contact[]> {
   term = term.trim();

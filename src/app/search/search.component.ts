@@ -52,13 +52,10 @@ ngOnInit() {
  // switch to new search observable each time the term changes
  switchMap((term: string) => this.contactService.searchContacts(term)),
 
-//  .subscribe((data: Observable<Contact[]>) => this.contacts = data),
+
 );
 
 
-
-
- //this.getContactDetails(this.route.snapshot.params['id']);
 
 
 }

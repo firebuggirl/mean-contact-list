@@ -1,15 +1,12 @@
 'use strict';
 
 require('dotenv').config({ path: __dirname + '/../variables.env' });
-//const fs = require('fs');
 const express = require('express');
 const router = express.Router();
 const Contact = require('../models/Contact.js');
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const util = require('util');//for logging
-//const cors = require('cors');
-//const cookieParser = require('cookie-parser');
 const mongodb = require("mongodb");
 const ObjectID = mongodb.ObjectID;
 
@@ -34,10 +31,9 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 
 
-// router.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+
  router.use(bodyParser.json());
-// router.use(bodyParser.urlencoded({ extended: true }));
-// router.use(cookieParser());
+
 
 
 

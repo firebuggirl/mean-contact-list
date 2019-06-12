@@ -55,7 +55,7 @@ export class NavbarComponent implements OnInit{
    // switch to new search observable each time the term changes
    switchMap((term: string) => this.contactService.searchContacts(term)),
 
-  //  .subscribe((data: Observable<Contact[]>) => this.contacts = data),
+
  );
 
 
@@ -65,7 +65,6 @@ export class NavbarComponent implements OnInit{
      console.log('💪 Production!');
    }
 
-   //this.getContactDetails(this.route.snapshot.params['id']);
 
 
  }
