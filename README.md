@@ -1,4 +1,4 @@
-# Ang8Crud Full Stack Contact List
+# Angular 8 CRUD Full Stack Contact List
 
 ![Alt text](src/assets/images/contact.png?raw=true "Contact List Home")
 
