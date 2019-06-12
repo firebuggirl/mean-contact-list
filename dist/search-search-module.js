@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["search-search-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/search/search/search.component.html":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/search/search/search.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n\n<div id=\"searchDiv\">\n\n    <form class=\"search\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search by name or state\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n    </form>\n</div>\n\n<div id=\"searchUL\">\n  <ul class=\"search-result\">\n    <li *ngFor=\"let contact of contacts | async\" >\n      <a [routerLink]=\"['/contact-details', contact._id]\">\n        {{contact.name}}\n      </a>\n    </li>\n  </ul>\n</div>\n<div >\n    <router-outlet></router-outlet>\n</div>\n"
+
+/***/ }),
+
 /***/ "./src/app/search/search-routing.module.ts":
 /*!*************************************************!*\
   !*** ./src/app/search/search-routing.module.ts ***!
@@ -100,17 +111,6 @@ module.exports = ".search-result {\n\tlist-style-type: none;\n\tmargin-top: 3rem
 
 /***/ }),
 
-/***/ "./src/app/search/search/search.component.html":
-/*!*****************************************************!*\
-  !*** ./src/app/search/search/search.component.html ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n\n<div id=\"searchDiv\">\n\n    <form class=\"search\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search by name or state\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n    </form>\n</div>\n\n<div id=\"searchUL\">\n  <ul class=\"search-result\">\n    <li *ngFor=\"let contact of contacts | async\" >\n      <a [routerLink]=\"['/contact-details', contact._id]\">\n        {{contact.name}}\n      </a>\n    </li>\n  </ul>\n</div>\n<div >\n    <router-outlet></router-outlet>\n</div>\n"
-
-/***/ }),
-
 /***/ "./src/app/search/search/search.component.ts":
 /*!***************************************************!*\
   !*** ./src/app/search/search/search.component.ts ***!
@@ -173,7 +173,7 @@ var SearchComponent = /** @class */ (function () {
     SearchComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-search',
-            template: __webpack_require__(/*! ./search.component.html */ "./src/app/search/search/search.component.html"),
+            template: __webpack_require__(/*! raw-loader!./search.component.html */ "./node_modules/raw-loader/index.js!./src/app/search/search/search.component.html"),
             styles: [__webpack_require__(/*! ./search.component.css */ "./src/app/search/search/search.component.css")]
         }),
         __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],

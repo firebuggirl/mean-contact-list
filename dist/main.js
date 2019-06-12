@@ -1,5 +1,71 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/app.component.html":
+/*!**************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/app.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n\n<section class=\"section\">\n  <div class=\"container\">\n    <app-navbar></app-navbar>\n    <router-outlet></router-outlet>\n  </div>\n</section>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/callback/callback.component.html":
+/*!****************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/callback/callback.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"loading\">\n  <img src=\"../assets/loading.svg\" alt=\"loading\">\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/home/home.component.html":
+/*!********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/home/home.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"starter-template\">\n  <div class=\"columns\">\n    <div class=\"column1\">\n      <img  src=\"../../assets/images/mean-logo2.png\">\n    </div>\n    <div class=\"home-column\">\n      <h1 class=\"title\">MEAN Stack Contact List</h1>\n      <h2 class=\"subtitle\">W/ A Node.js RESTful API</h2>\n      <h6 class=\"subtitle\">Background photo by Will Stewart via Unsplash</h6>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/login/login.component.html":
+/*!**********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/login/login.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h4 *ngIf=\"_authService.isAuthenticated() ; else nologin\">\n  You are logged in! <a (click)=\"_authService.logout()\" class=\"btn btn-warning\">Log Out</a>, Go to <a href=\"/user\" class=\"btn btn-info\">User Management</a>\n</h4>\n<ng-template #nologin>\n<h4>\n  You are not logged in! Please <a (click)=\"_authService.login()\" class=\"btn btn-success\">Log In</a> to continue.\n</h4>\n</ng-template>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/navbar/navbar.component.html":
+/*!************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/navbar/navbar.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n\n<div>\n<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">MEAN</a>\n  <button class=\"navbar-toggler d-lg-none\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarsExampleDefault\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \">\n        <a class=\"btn btn-warning\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/contacts\" routerLinkActive=\"active\">Contacts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n      </li>\n\n      <li class=\"nav-item\"><h4 *ngIf=\"auth.isAuthenticated() ; else nologin\">\n            <a (click)=\"auth.logout()\"  class=\"btn btn-warning\">Log Out</a>\n           </h4>\n           <ng-template #nologin>\n            <h4>\n               <a (click)=\"auth.login()\" class=\"btn btn-success\" >Log In</a>\n            </h4>\n            </ng-template>\n      </li>\n\n    </ul>\n    <!-- <form class=\"form-inline mt-2 mt-md-0\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search Contacts...\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n\n          <ul class=\"search-result\">\n            <li *ngFor=\"let contact of contacts | async\" >\n              <a [routerLink]=\"['/contact-details', contact._id]\">\n                {{contact.name}}\n              </a>\n            </li>\n          </ul>\n    </form> -->\n  </div>\n</nav>\n<div class='container'>\n    <router-outlet></router-outlet>\n</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/not-found/not-found.component.html":
+/*!******************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/not-found/not-found.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  not-found works!\n</p>\n"
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /*!**********************************************************!*\
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
@@ -30,16 +96,16 @@ var map = {
 	]
 };
 function webpackAsyncContext(req) {
-	var ids = map[req];
-	if(!ids) {
+	if(!__webpack_require__.o(map, req)) {
 		return Promise.resolve().then(function() {
 			var e = new Error("Cannot find module '" + req + "'");
 			e.code = 'MODULE_NOT_FOUND';
 			throw e;
 		});
 	}
+
+	var ids = map[req], id = ids[0];
 	return __webpack_require__.e(ids[1]).then(function() {
-		var id = ids[0];
 		return __webpack_require__(id);
 	});
 }
@@ -135,17 +201,6 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 
 /***/ }),
 
-/***/ "./src/app/app.component.html":
-/*!************************************!*\
-  !*** ./src/app/app.component.html ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n\n<section class=\"section\">\n  <div class=\"container\">\n    <app-navbar></app-navbar>\n    <router-outlet></router-outlet>\n  </div>\n</section>\n"
-
-/***/ }),
-
 /***/ "./src/app/app.component.ts":
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
@@ -178,7 +233,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
+            template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
@@ -212,7 +267,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _contact_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./contact.service */ "./src/app/contact.service.ts");
 /* harmony import */ var _message_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./message.service */ "./src/app/message.service.ts");
@@ -290,8 +345,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _auth0_variables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth0-variables */ "./src/app/auth/auth0-variables.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! auth0-js */ "./node_modules/auth0-js/src/index.js");
-/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! auth0-js */ "./node_modules/auth0-js/dist/auth0.min.esm.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -409,17 +463,6 @@ module.exports = ".loading {\n  position: absolute;\n  display: flex;\n  justify
 
 /***/ }),
 
-/***/ "./src/app/callback/callback.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/callback/callback.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"loading\">\n  <img src=\"../assets/loading.svg\" alt=\"loading\">\n</div>\n"
-
-/***/ }),
-
 /***/ "./src/app/callback/callback.component.ts":
 /*!************************************************!*\
   !*** ./src/app/callback/callback.component.ts ***!
@@ -449,7 +492,7 @@ var CallbackComponent = /** @class */ (function () {
     CallbackComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-callback',
-            template: __webpack_require__(/*! ./callback.component.html */ "./src/app/callback/callback.component.html"),
+            template: __webpack_require__(/*! raw-loader!./callback.component.html */ "./node_modules/raw-loader/index.js!./src/app/callback/callback.component.html"),
             styles: [__webpack_require__(/*! ./callback.component.css */ "./src/app/callback/callback.component.css")]
         }),
         __metadata("design:paramtypes", [])
@@ -635,17 +678,6 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 
 /***/ }),
 
-/***/ "./src/app/home/home.component.html":
-/*!******************************************!*\
-  !*** ./src/app/home/home.component.html ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"starter-template\">\n  <div class=\"columns\">\n    <div class=\"column1\">\n      <img  src=\"../../assets/images/mean-logo2.png\">\n    </div>\n    <div class=\"home-column\">\n      <h1 class=\"title\">MEAN Stack Contact List</h1>\n      <h2 class=\"subtitle\">W/ A Node.js RESTful API</h2>\n      <h6 class=\"subtitle\">Background photo by Will Stewart via Unsplash</h6>\n    </div>\n  </div>\n</div>\n"
-
-/***/ }),
-
 /***/ "./src/app/home/home.component.ts":
 /*!****************************************!*\
   !*** ./src/app/home/home.component.ts ***!
@@ -675,7 +707,7 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home',
-            template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
+            template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
         __metadata("design:paramtypes", [])
@@ -695,17 +727,6 @@ var HomeComponent = /** @class */ (function () {
 /***/ (function(module, exports) {
 
 module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/login/login.component.html":
-/*!********************************************!*\
-  !*** ./src/app/login/login.component.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h4 *ngIf=\"_authService.isAuthenticated() ; else nologin\">\n  You are logged in! <a (click)=\"_authService.logout()\" class=\"btn btn-warning\">Log Out</a>, Go to <a href=\"/user\" class=\"btn btn-info\">User Management</a>\n</h4>\n<ng-template #nologin>\n<h4>\n  You are not logged in! Please <a (click)=\"_authService.login()\" class=\"btn btn-success\">Log In</a> to continue.\n</h4>\n</ng-template>\n"
 
 /***/ }),
 
@@ -741,7 +762,7 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-login',
-            template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
+            template: __webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/index.js!./src/app/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
         }),
         __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]])
@@ -788,17 +809,6 @@ var MessageService = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/navbar/navbar.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/navbar/navbar.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n\n<div>\n<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">MEAN</a>\n  <button class=\"navbar-toggler d-lg-none\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\" [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbarsExampleDefault\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\" [ngbCollapse]=\"isCollapsed\">\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item \">\n        <a class=\"btn btn-warning\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/contacts\" routerLinkActive=\"active\">Contacts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"btn btn-danger\" routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n      </li>\n\n      <li class=\"nav-item\"><h4 *ngIf=\"auth.isAuthenticated() ; else nologin\">\n            <a (click)=\"auth.logout()\"  class=\"btn btn-warning\">Log Out</a>\n           </h4>\n           <ng-template #nologin>\n            <h4>\n               <a (click)=\"auth.login()\" class=\"btn btn-success\" >Log In</a>\n            </h4>\n            </ng-template>\n      </li>\n\n    </ul>\n    <!-- <form class=\"form-inline mt-2 mt-md-0\">\n      <input #searchBox type=\"text\" name=\"search\" placeholder=\"Search Contacts...\" id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\n\n          <ul class=\"search-result\">\n            <li *ngFor=\"let contact of contacts | async\" >\n              <a [routerLink]=\"['/contact-details', contact._id]\">\n                {{contact.name}}\n              </a>\n            </li>\n          </ul>\n    </form> -->\n  </div>\n</nav>\n<div class='container'>\n    <router-outlet></router-outlet>\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -870,7 +880,7 @@ var NavbarComponent = /** @class */ (function () {
     NavbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-navbar',
-            template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/navbar/navbar.component.html"),
+            template: __webpack_require__(/*! raw-loader!./navbar.component.html */ "./node_modules/raw-loader/index.js!./src/app/navbar/navbar.component.html"),
             styles: ["\n    .active {\n      background: lightgray;\n    }\n  "]
         }),
         __metadata("design:paramtypes", [_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
@@ -894,17 +904,6 @@ var NavbarComponent = /** @class */ (function () {
 /***/ (function(module, exports) {
 
 module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25vdC1mb3VuZC9ub3QtZm91bmQuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/not-found/not-found.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/not-found/not-found.component.html ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  not-found works!\n</p>\n"
 
 /***/ }),
 
@@ -937,7 +936,7 @@ var NotFoundComponent = /** @class */ (function () {
     NotFoundComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-not-found',
-            template: __webpack_require__(/*! ./not-found.component.html */ "./src/app/not-found/not-found.component.html"),
+            template: __webpack_require__(/*! raw-loader!./not-found.component.html */ "./node_modules/raw-loader/index.js!./src/app/not-found/not-found.component.html"),
             styles: [__webpack_require__(/*! ./not-found.component.css */ "./src/app/not-found/not-found.component.css")]
         }),
         __metadata("design:paramtypes", [])

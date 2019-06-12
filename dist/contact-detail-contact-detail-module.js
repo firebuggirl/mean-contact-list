@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["contact-detail-contact-detail-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/contact-detail/contact-detail/contact-detail.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/contact-detail/contact-detail/contact-detail.component.html ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"contactDetail\">\n  <section >\n    <div >\n      <div class=\"detail-container\">\n        <h1 class=\"title\">{{ contact?.name }}</h1>\n        <h2 class=\"subtitle\">Email {{ contact?.email }}</h2>\n        <h2 class=\"subtitle\">Phone {{ contact?.phone }}</h2>\n        <h2 class=\"subtitle\">Address {{ contact?.address }}</h2>\n        <h2 class=\"subtitle\">City {{ contact?.city }}</h2>\n        <h2 class=\"subtitle\">State {{ contact?.state }}</h2>\n        <h2 class=\"subtitle\">Zipcode {{ contact?.zipcode }}</h2>\n        <!-- <h2 class=\"subtitle\">work phone {{ contact?.phone.work }}</h2>\n        <h2 class=\"subtitle\">mobile phone {{ contact?.phone.mobile }}</h2> -->\n      </div>\n    </div>\n    <div class=\"btn-column\">\n      <div class=\"column\">\n        <button class=\"btn btn-danger btn-lg btn-detail\" routerLink=\"/contacts\">Back</button>\n        <button *ngIf=\"contact\" class=\"btn btn-warning btn-lg btn-detail\" [routerLink]=\"['/contact-edit', contact?._id]\">Edit</button>\n        <button *ngIf=\"!contact\"  class=\"btn btn-warning btn-lg btn-detail\">Edit</button>\n        <button class=\"btn btn-danger btn-lg btn-detail\" (click)=\"deleteContact(contact?._id)\">Delete</button>\n      </div>\n    </div>\n  </section>\n</div>\n"
+
+/***/ }),
+
 /***/ "./src/app/contact-detail/contact-detail-routing.module.ts":
 /*!*****************************************************************!*\
   !*** ./src/app/contact-detail/contact-detail-routing.module.ts ***!
@@ -93,17 +104,6 @@ var ContactDetailModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/contact-detail/contact-detail/contact-detail.component.html":
-/*!*****************************************************************************!*\
-  !*** ./src/app/contact-detail/contact-detail/contact-detail.component.html ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"contactDetail\">\n  <section >\n    <div >\n      <div class=\"detail-container\">\n        <h1 class=\"title\">{{ contact?.name }}</h1>\n        <h2 class=\"subtitle\">Email {{ contact?.email }}</h2>\n        <h2 class=\"subtitle\">Phone {{ contact?.phone }}</h2>\n        <h2 class=\"subtitle\">Address {{ contact?.address }}</h2>\n        <h2 class=\"subtitle\">City {{ contact?.city }}</h2>\n        <h2 class=\"subtitle\">State {{ contact?.state }}</h2>\n        <h2 class=\"subtitle\">Zipcode {{ contact?.zipcode }}</h2>\n        <!-- <h2 class=\"subtitle\">work phone {{ contact?.phone.work }}</h2>\n        <h2 class=\"subtitle\">mobile phone {{ contact?.phone.mobile }}</h2> -->\n      </div>\n    </div>\n    <div class=\"btn-column\">\n      <div class=\"column\">\n        <button class=\"btn btn-danger btn-lg btn-detail\" routerLink=\"/contacts\">Back</button>\n        <button *ngIf=\"contact\" class=\"btn btn-warning btn-lg btn-detail\" [routerLink]=\"['/contact-edit', contact?._id]\">Edit</button>\n        <button *ngIf=\"!contact\"  class=\"btn btn-warning btn-lg btn-detail\">Edit</button>\n        <button class=\"btn btn-danger btn-lg btn-detail\" (click)=\"deleteContact(contact?._id)\">Delete</button>\n      </div>\n    </div>\n  </section>\n</div>\n"
-
-/***/ }),
-
 /***/ "./src/app/contact-detail/contact-detail/contact-detail.component.ts":
 /*!***************************************************************************!*\
   !*** ./src/app/contact-detail/contact-detail/contact-detail.component.ts ***!
@@ -151,7 +151,7 @@ var ContactDetailComponent = /** @class */ (function () {
     ContactDetailComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-contact-detail',
-            template: __webpack_require__(/*! ./contact-detail.component.html */ "./src/app/contact-detail/contact-detail/contact-detail.component.html")
+            template: __webpack_require__(/*! raw-loader!./contact-detail.component.html */ "./node_modules/raw-loader/index.js!./src/app/contact-detail/contact-detail/contact-detail.component.html")
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"]])
     ], ContactDetailComponent);
