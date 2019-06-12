@@ -1,0 +1,7 @@
+
+.git/
+
+npm-debug
+
+# prevent hackers from seeing structure of app
+docker-compose*.yml
