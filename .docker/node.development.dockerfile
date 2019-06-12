@@ -6,7 +6,7 @@ LABEL author="Juliette Tworsey"
 COPY      . /var/www
 WORKDIR   /var/www
 
-# Added process SIGINT + process SIGTERM to app.js, so don't need to use tini here
+# Added process SIGINT + process SIGTERM to server.js, so don't need to use tini here
 # When using tini => runs in foreground as PID 1 (main process) => shut down properly
 # when using ctrl + c & docker stop (when running -d)
 # check running processes in container => docker top <container_id>
