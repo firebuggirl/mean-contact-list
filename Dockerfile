@@ -4,7 +4,7 @@ FROM node:10-slim as base
 LABEL org.opencontainers.image.authors="Juliette Tworsey"
 LABEL org.opencontainers.image.title="Node.js Dockerfile Ultimate Dockerfile"
 LABEL org.opencontainers.image.licenses=MIT
-LABEL com.bretfisher.nodeversion=$NODE_VERSION
+LABEL com.juliettetworsey.nodeversion=$NODE_VERSION
 
 ENV NODE_ENV=production
 EXPOSE 7777

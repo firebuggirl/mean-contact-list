@@ -52,7 +52,7 @@
     "prerender-node": "^3.2.4",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
-    "snyk": "^1.177.0",
+    "snyk": "^1.194.0",
     "zone.js": "^ 0.9.1"
   },
   "devDependencies": {
