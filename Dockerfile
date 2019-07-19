@@ -1,57 +1,78 @@
-# Multistage Docker build test
-# slim is not working w/tini
-#FROM node:10-slim as prod
-FROM node:10.15-alpine as prod
+## Stage 1 (production base)
+# Reminder: slim => Debian based => apk is Alpine based use apt-get
+FROM node:10-slim as base
+LABEL org.opencontainers.image.authors="Juliette Tworsey"
+LABEL org.opencontainers.image.title="Node.js Dockerfile Ultimate Dockerfile"
+LABEL org.opencontainers.image.licenses=MIT
+LABEL com.bretfisher.nodeversion=$NODE_VERSION
 
 ENV NODE_ENV=production
-
 EXPOSE 7777
 
-RUN apk add --no-cache tini
-
-WORKDIR WORKDIR /app
-
+WORKDIR /app
 # Use wildcard * in case lock file does not yet exist
 COPY package*.json  ./
-
 # Double Ampersand => first command has to successfully install BEFORE the clean
 # npm cache clean => make sure no left over files downloaded from NPM
-RUN npm install --only=production && npm cache clean --force
+# we use npm ci here so only the package-lock.json file is used in production
+# npm config list => gets config info on how NPM & Node.js are set up => good for logging/debugging...
+RUN npm config list
+RUN npm ci \
+    && npm cache clean --force
+ENV PATH /app/node_modules/.bin:$PATH
+# Add Tini
+ENV TINI_VERSION v0.18.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+ENTRYPOINT ["/tini", "--"]
+CMD ["npm", "run", "serve"]
 
+# Stage 2 => Development
+FROM base as dev
+ENV NODE_ENV=development
 COPY . .
+# NOTE: these apt dependencies are only needed
+# for testing. they shouldn't be in production
+RUN apt-get update -qq && apt-get install -qy \
+    ca-certificates \
+    bzip2 \
+    curl \
+    libfontconfig \
+    --no-install-recommends
+RUN npm config list
+#RUN npm install nodemon -g
+RUN npm install --only=development \
+    && npm cache clean --force
+USER node
+CMD ["npm", "run", "serve-dev"]
 
-# ..use this in prod if want to prevent images from building as a result of failed tests
-# RUN npm test
 
-# Added process SIGINT + process SIGTERM to app.js, so don't need to use tini here
-# When using tini => runs in foreground as PID 1 (main process) => shut down properly
-# when using ctrl + c & docker stop (when running -d)
-# check running processes in container => docker top <container_id>
-ENTRYPOINT ["/sbin/tini", "--"]
-
-CMD ["npm", "prod"]
-
-FROM prod as dev
-ENV NODE_ENV=development
-RUN npm install --only=development
-RUN npm install nodemon -g
-CMD ["npm", "dev"]
-
+# Stage 3 => Test
 FROM dev as test
-ENV NODE_ENV=development
-# RUN npm test..comment out CMD if using this command
-CMD ["npm", "test"]
+COPY . .
+RUN npm audit
+# Add security scanner
+#NOTE: don't need to add certificates here w/apt-get => already done via dev stage
+ARG MICROSCANNER_TOKEN
+ADD https://get.aquasec.com/microscanner /
+USER root
+RUN chmod +x /microscanner
+RUN /microscanner $MICROSCANNER_TOKEN --continue-on-failure
 
+# Stage 4 => remove ./tests => get rid of dev dependency node_modules
+FROM test as pre-prod
+RUN rm -rf ./tests rm -rf ./node_modules
 
+# Stage 5 => leanest image possible
+FROM base as prod
+COPY --from=pre-prod /app /app
+#COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+HEALTHCHECK CMD curl http://127.0.0.1/ || exit 1
+USER node
 
-# Build + run prod:
-# docker build -t multistagecrud --target prod . && docker run --init -p 7777:7777 multistagecrud
+# Build order:
+# dev => test => prod
 
-# Build + run dev:
-# docker build -t multistagecrud:dev --target dev . && docker run --init -p 7777:7777 multistagecrud:dev
+# Build/run instructions => see ./multi-stage-dockerfile.md
 
-# need the tini `--init` process for `ctrl + c`..stopping container
-
-
-# Build + run test:
-# docker build -t multistagecrud:test --target test . && docker run --init  multistagecrud:test
+# need the tini `--init` process for `ctrl + c`..stopping container..tini requires Alpine distro

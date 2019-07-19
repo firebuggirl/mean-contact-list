@@ -359,7 +359,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
  //note: this file is hidden via .gitignore, cd into directory to view
 
 
-//import { JwtHelperService } from '@auth0/angular-jwt';
 window.global = window; //need this to avoid this error in Angular 6:
 // Uncaught ReferenceError: global is not defined
 var AuthService = /** @class */ (function () {
@@ -529,7 +528,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-//import { Observable } from 'rxjs/Observable';
 
 
 
@@ -565,23 +563,6 @@ var ContactService = /** @class */ (function () {
     ContactService.prototype.deleteContact = function (id) {
         return this.http.delete("api/Contact/" + id);
     };
-    //
-    //   searchContacts(term: string): Observable<Contact[]> {
-    //
-    //
-    //     if (!term.trim()) {
-    //           // if not search id, return empty hero array.
-    //           return of([]);
-    //         }
-    //       //  return this.http.get<Contact[]>(`api/search/?name=${term}`).pipe(
-    //        //return this.http.get<Contact[]>(`${this.contactUrl}/${id}/name=${id}`).pipe(
-    //       //return this.http.get<Contact[]>(`api/contacts/${id}/name=${id}`).pipe(
-    // let data = {limit: "2"};
-    //       return this.http.get<Contact[]>(`api/search/`,  {params: data}).pipe(
-    //         tap(_ => this.log(`found contacts matching "${term}"`)),
-    //         catchError(this.handleError<Contact[]>('searchContacts'))
-    //       );
-    //  }
     ContactService.prototype.searchContacts = function (term) {
         term = term.trim();
         // Add safe, URL encoded search parameter if there is a search term
@@ -875,7 +856,6 @@ var NavbarComponent = /** @class */ (function () {
         else {
             console.log('💪 Production!');
         }
-        //this.getContactDetails(this.route.snapshot.params['id']);
     };
     NavbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
