@@ -1,6 +1,25 @@
 # Useful Docker Commands
 
+## CLI aliases to save your hands
 
+` alias dcu=‘docker-compose up’
+
+  alias dcd='docker-compose down’
+
+  alias dcr='docker-compose run’
+
+  alias dce='docker-compose exec’
+
+  alias dcud='docker-compose up -d’
+
+  alias dcps='docker-compose ps’
+
+  alias dcl='docker-compose logs’
+`
+
+` alias dps='docker ps' `
+
+` alias di='docker images' `
 ## Docker Machine
 
 - `docker-machine start` - Start VM

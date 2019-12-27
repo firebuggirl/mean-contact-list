@@ -1,13 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["contact-edit-contact-edit-module"],{
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/contact-edit/contact-edit/contact-edit.component.html":
-/*!*************************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/contact-edit/contact-edit/contact-edit.component.html ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/contact-edit/contact-edit/contact-edit.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/contact-edit/contact-edit/contact-edit.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<div class=\"contactEdit\">\n  <h1 class=\"title\">Update Contact</h1>\n  <div >\n    <div>\n      <form #contactForm=\"ngForm\" (ngSubmit)=\"updateContact(contact._id)\">\n        <div class=\"field\">\n          <div class=\"control\">\n            <label for=\"name\">Name</label>\n            <input *ngIf=\"contact\" required name=\"name\" id=\"name\" [(ngModel)]=\"contact.name\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"name\" id=\"name\" type=\"text\" class=\"input\">\n          </div>\n        </div>\n        <div class=\"field\">\n          <div class=\"control\">\n            <label for=\"email\">Email</label>\n            <input *ngIf=\"contact\" required name=\"email\" id=\"email\" [(ngModel)]=\"contact.email\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"email\" id=\"email\" type=\"text\" class=\"input\">\n          </div>\n        </div>\n        <div class=\"field\">\n          <div class=\"control\">\n            <label for=\"phone\">Phone</label>\n            <input *ngIf=\"contact\" required name=\"phone\" id=\"phone\" [(ngModel)]=\"contact.phone\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"phone\" id=\"phone\" type=\"text\" class=\"input\">\n          </div>\n        </div>\n       <div class=\"control\">\n          <div class=\"field\">\n            <label for=\"address\">Address</label>\n            <input *ngIf=\"contact\" required name=\"address\" id=\"address\" [(ngModel)]=\"contact.address\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"address\" id=\"address\" type=\"text\" class=\"input\">\n          </div>\n       </div>\n      <div class=\"control\">\n          <div class=\"field\">\n            <label for=\"city\">City</label>\n            <input *ngIf=\"contact\" required name=\"city\" id=\"city\" [(ngModel)]=\"contact.city\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"city\" id=\"city\" type=\"text\" class=\"input\">\n          </div>\n      </div>\n      <div class=\"control\">\n          <div class=\"field\">\n            <label for=\"state\">State</label>\n            <input *ngIf=\"contact\" required name=\"state\" id=\"state\" [(ngModel)]=\"contact.state\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"state\" id=\"state\" type=\"text\" class=\"input\">\n        </div>\n      </div>\n      <div class=\"control\">\n            <div class=\"field\">\n              <label for=\"zipcode\">Zipcode</label>\n              <input *ngIf=\"contact\" required name=\"zipcode\" id=\"zipcode\" [(ngModel)]=\"contact.zipcode\" type=\"text\" class=\"input\">\n              <input *ngIf=\"!contact\" required name=\"zipcode\" id=\"zipcode\" type=\"text\" class=\"input\">\n           </div>\n      </div>\n      <div class=\"btn-column\">\n          <div class=\"control\">\n            <button class=\"btn btn-danger btn-edit\" routerLink=\"/contacts\"><i class=\"fas fa-arrow-left\"></i>Back</button>\n            <button class=\"btn btn-warning\" type=\"submit\" [disabled]=\"!contactForm.valid\">Update</button>\n          </div>\n      </div>\n      </form>\n    </div>\n  </div>\n</div>\n"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"contactEdit\">\n  <h1 class=\"title\">Update Contact</h1>\n  <div >\n    <div>\n      <form #contactForm=\"ngForm\" (ngSubmit)=\"updateContact(contact._id)\">\n        <div class=\"field\">\n          <div class=\"control\">\n            <label for=\"name\">Name</label>\n            <input *ngIf=\"contact\" required name=\"name\" id=\"name\" [(ngModel)]=\"contact.name\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"name\" id=\"name\" type=\"text\" class=\"input\">\n          </div>\n        </div>\n        <div class=\"field\">\n          <div class=\"control\">\n            <label for=\"email\">Email</label>\n            <input *ngIf=\"contact\" required name=\"email\" id=\"email\" [(ngModel)]=\"contact.email\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"email\" id=\"email\" type=\"text\" class=\"input\">\n          </div>\n        </div>\n        <div class=\"field\">\n          <div class=\"control\">\n            <label for=\"phone\">Phone</label>\n            <input *ngIf=\"contact\" required name=\"phone\" id=\"phone\" [(ngModel)]=\"contact.phone\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"phone\" id=\"phone\" type=\"text\" class=\"input\">\n          </div>\n        </div>\n       <div class=\"control\">\n          <div class=\"field\">\n            <label for=\"address\">Address</label>\n            <input *ngIf=\"contact\" required name=\"address\" id=\"address\" [(ngModel)]=\"contact.address\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"address\" id=\"address\" type=\"text\" class=\"input\">\n          </div>\n       </div>\n      <div class=\"control\">\n          <div class=\"field\">\n            <label for=\"city\">City</label>\n            <input *ngIf=\"contact\" required name=\"city\" id=\"city\" [(ngModel)]=\"contact.city\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"city\" id=\"city\" type=\"text\" class=\"input\">\n          </div>\n      </div>\n      <div class=\"control\">\n          <div class=\"field\">\n            <label for=\"state\">State</label>\n            <input *ngIf=\"contact\" required name=\"state\" id=\"state\" [(ngModel)]=\"contact.state\" type=\"text\" class=\"input\">\n            <input *ngIf=\"!contact\" required name=\"state\" id=\"state\" type=\"text\" class=\"input\">\n        </div>\n      </div>\n      <div class=\"control\">\n            <div class=\"field\">\n              <label for=\"zipcode\">Zipcode</label>\n              <input *ngIf=\"contact\" required name=\"zipcode\" id=\"zipcode\" [(ngModel)]=\"contact.zipcode\" type=\"text\" class=\"input\">\n              <input *ngIf=\"!contact\" required name=\"zipcode\" id=\"zipcode\" type=\"text\" class=\"input\">\n           </div>\n      </div>\n      <div class=\"btn-column\">\n          <div class=\"control\">\n            <button class=\"btn btn-danger btn-edit\" routerLink=\"/contacts\"><i class=\"fas fa-arrow-left\"></i>Back</button>\n            <button class=\"btn btn-warning\" type=\"submit\" [disabled]=\"!contactForm.valid\">Update</button>\n          </div>\n      </div>\n      </form>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -30,6 +32,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 
 
@@ -77,6 +82,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 
 
@@ -126,6 +134,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 
 
 
@@ -148,10 +159,15 @@ var ContactEditComponent = /** @class */ (function () {
         this.contactService.updateContact(id, this.contact)
             .subscribe(function (res) { return _this.router.navigate(['/contacts']); }, function (err) { return console.log(err); });
     };
+    ContactEditComponent.ctorParameters = function () { return [
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] },
+        { type: _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"] }
+    ]; };
     ContactEditComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-contact-edit',
-            template: __webpack_require__(/*! raw-loader!./contact-edit.component.html */ "./node_modules/raw-loader/index.js!./src/app/contact-edit/contact-edit/contact-edit.component.html")
+            template: __importDefault(__webpack_require__(/*! raw-loader!./contact-edit.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/contact-edit/contact-edit/contact-edit.component.html")).default
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"]])
     ], ContactEditComponent);

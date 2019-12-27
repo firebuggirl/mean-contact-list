@@ -10,8 +10,8 @@ import { MessageService } from './message.service';
 @Injectable()
 export class ContactService {
 
-  private contactUrl = 'api/contact';
-  private contactsUrl = 'api/contacts';  // URL to web api
+  private contactUrl = 'api/contact';// URL to web api
+  // private contactsUrl = 'api/contacts';  // URL to web api
 
   constructor(private http: HttpClient, private messageService: MessageService ) { }
 
@@ -47,7 +47,7 @@ export class ContactService {
 
   // DELETE A Contact
   deleteContact(id: string): Observable<void> {
-    return this.http.delete<void>(`api/Contact/${id}`);
+    return this.http.delete<void>(`api/contact/${id}`);
   }
 
 

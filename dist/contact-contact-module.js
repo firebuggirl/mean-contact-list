@@ -1,13 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["contact-contact-module"],{
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/contact/contact/contact.component.html":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/contact/contact/contact.component.html ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/contact/contact/contact.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/contact/contact/contact.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n\n<div class=\"contactlist\" >\n  <h1 class=\"title\">Contact List\n    <a [routerLink]=\"['/contact-create']\" class=\"button is-link is-outlined\"><i class=\"fas fa-plus\"></i>Add</a>\n  </h1>\n  <table  >\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Phone</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Zipcode</th>\n      </tr>\n    </thead>\n\n\n  <tbody>\n  <tr *ngFor=\"let contact of contacts | paginate: { itemsPerPage: 10,\n                                                    currentPage: page,\n                                                    totalItems: totalRec }\">\n  <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n  <td>{{ contact.email }}</td>\n  <td>{{ contact.phone }}</td>\n  <td>{{ contact.address }}</td>\n  <td>{{ contact.city }}</td>\n  <td>{{ contact.state }}</td>\n  <td>{{ contact.zipcode }}</td>\n  </tr>\n  </tbody>\n  </table>\n\n<div class=\"paginationDiv\">\n  <pagination-controls class=\"my-pagination\" maxSize=\"5\" directionLinks=\"true\" (pageChange)=\"page = $event\"></pagination-controls>\n  </div>\n</div>\n"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div class=\"contactlist\" >\n  <h1 class=\"title\">Contact List\n    <a [routerLink]=\"['/contact-create']\" class=\"button is-link is-outlined\"><i class=\"fas fa-plus\"></i>Add</a>\n  </h1>\n  <table  >\n    <thead>\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Phone</th>\n        <th>Address</th>\n        <th>City</th>\n        <th>State</th>\n        <th>Zipcode</th>\n      </tr>\n    </thead>\n\n\n  <tbody>\n  <tr *ngFor=\"let contact of contacts | paginate: { itemsPerPage: 10,\n                                                    currentPage: page,\n                                                    totalItems: totalRec }\">\n  <td><a class=\"button is-text\" [routerLink]=\"['/contact-details', contact._id]\">{{ contact.name }}</a></td>\n  <td>{{ contact.email }}</td>\n  <td>{{ contact.phone }}</td>\n  <td>{{ contact.address }}</td>\n  <td>{{ contact.city }}</td>\n  <td>{{ contact.state }}</td>\n  <td>{{ contact.zipcode }}</td>\n  </tr>\n  </tbody>\n  </table>\n\n<div class=\"paginationDiv\">\n  <pagination-controls class=\"my-pagination\" maxSize=\"5\" directionLinks=\"true\" (pageChange)=\"page = $event\"></pagination-controls>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -162,6 +164,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 
 
 
@@ -210,6 +215,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 
 
 
@@ -242,10 +250,12 @@ var ContactModule = /** @class */ (function () {
 /*!*******************************************************!*\
   !*** ./src/app/contact/contact/contact.component.css ***!
   \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n\n/* Note: overcome Angular's view encapsulation w/ the /deep/ operator\nhttps://www.npmjs.com/package/ngx-pagination#styling */\n\n.paginationDiv{\n  margin-top: 1rem;\n}\n\n.my-pagination /deep/ .ngx-pagination .current {\n  background: #930303;\n}\n\n.my-pagination /deep/ .ngx-pagination li{\n  background: #403f45;\n}\n\n.my-pagination /deep/ .ngx-pagination li a{\n  color: beige;\n}\n\n.my-pagination /deep/ .ngx-pagination li a:hover{\n  background: #c03131;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGFjdC9jb250YWN0L2NvbnRhY3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUVBO3NEQUNzRDs7QUFFdEQ7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb250YWN0L2NvbnRhY3QvY29udGFjdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cbi8qIE5vdGU6IG92ZXJjb21lIEFuZ3VsYXIncyB2aWV3IGVuY2Fwc3VsYXRpb24gdy8gdGhlIC9kZWVwLyBvcGVyYXRvclxuaHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2Uvbmd4LXBhZ2luYXRpb24jc3R5bGluZyAqL1xuXG4ucGFnaW5hdGlvbkRpdntcbiAgbWFyZ2luLXRvcDogMXJlbTtcbn1cblxuLm15LXBhZ2luYXRpb24gL2RlZXAvIC5uZ3gtcGFnaW5hdGlvbiAuY3VycmVudCB7XG4gIGJhY2tncm91bmQ6ICM5MzAzMDM7XG59XG5cbi5teS1wYWdpbmF0aW9uIC9kZWVwLyAubmd4LXBhZ2luYXRpb24gbGl7XG4gIGJhY2tncm91bmQ6ICM0MDNmNDU7XG59XG5cbi5teS1wYWdpbmF0aW9uIC9kZWVwLyAubmd4LXBhZ2luYXRpb24gbGkgYXtcbiAgY29sb3I6IGJlaWdlO1xufVxuXG4ubXktcGFnaW5hdGlvbiAvZGVlcC8gLm5neC1wYWdpbmF0aW9uIGxpIGE6aG92ZXJ7XG4gIGJhY2tncm91bmQ6ICNjMDMxMzE7XG59XG4iXX0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n/* Note: overcome Angular's view encapsulation w/ the /deep/ operator\nhttps://www.npmjs.com/package/ngx-pagination#styling */\n\n.paginationDiv{\n  margin-top: 1rem;\n}\n\n.my-pagination /deep/ .ngx-pagination .current {\n  background: #930303;\n}\n\n.my-pagination /deep/ .ngx-pagination li{\n  background: #403f45;\n}\n\n.my-pagination /deep/ .ngx-pagination li a{\n  color: beige;\n}\n\n.my-pagination /deep/ .ngx-pagination li a:hover{\n  background: #c03131;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGFjdC9jb250YWN0L2NvbnRhY3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUVBO3NEQUNzRDs7QUFFdEQ7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxtQkFBbUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb250YWN0L2NvbnRhY3QvY29udGFjdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cbi8qIE5vdGU6IG92ZXJjb21lIEFuZ3VsYXIncyB2aWV3IGVuY2Fwc3VsYXRpb24gdy8gdGhlIC9kZWVwLyBvcGVyYXRvclxuaHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2Uvbmd4LXBhZ2luYXRpb24jc3R5bGluZyAqL1xuXG4ucGFnaW5hdGlvbkRpdntcbiAgbWFyZ2luLXRvcDogMXJlbTtcbn1cblxuLm15LXBhZ2luYXRpb24gL2RlZXAvIC5uZ3gtcGFnaW5hdGlvbiAuY3VycmVudCB7XG4gIGJhY2tncm91bmQ6ICM5MzAzMDM7XG59XG5cbi5teS1wYWdpbmF0aW9uIC9kZWVwLyAubmd4LXBhZ2luYXRpb24gbGl7XG4gIGJhY2tncm91bmQ6ICM0MDNmNDU7XG59XG5cbi5teS1wYWdpbmF0aW9uIC9kZWVwLyAubmd4LXBhZ2luYXRpb24gbGkgYXtcbiAgY29sb3I6IGJlaWdlO1xufVxuXG4ubXktcGFnaW5hdGlvbiAvZGVlcC8gLm5neC1wYWdpbmF0aW9uIGxpIGE6aG92ZXJ7XG4gIGJhY2tncm91bmQ6ICNjMDMxMzE7XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -275,6 +285,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 
 
 
@@ -294,12 +307,16 @@ var ContactComponent = /** @class */ (function () {
         this.contactService.getPaginatedContacts()
             .subscribe(function (data) { return _this.contacts = data; });
     };
+    ContactComponent.ctorParameters = function () { return [
+        { type: _contact_service__WEBPACK_IMPORTED_MODULE_1__["ContactService"] },
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    ]; };
     ContactComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-contact',
-            template: __webpack_require__(/*! raw-loader!./contact.component.html */ "./node_modules/raw-loader/index.js!./src/app/contact/contact/contact.component.html"),
+            template: __importDefault(__webpack_require__(/*! raw-loader!./contact.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/contact/contact/contact.component.html")).default,
             changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].Default,
-            styles: [__webpack_require__(/*! ./contact.component.css */ "./src/app/contact/contact/contact.component.css")]
+            styles: [__importDefault(__webpack_require__(/*! ./contact.component.css */ "./src/app/contact/contact/contact.component.css")).default]
         }),
         __metadata("design:paramtypes", [_contact_service__WEBPACK_IMPORTED_MODULE_1__["ContactService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], ContactComponent);
