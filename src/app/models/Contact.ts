@@ -6,6 +6,4 @@ export interface Contact {
   city: string;
   state: string;
   zipcode: string;
-
-
 }

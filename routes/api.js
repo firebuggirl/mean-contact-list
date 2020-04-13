@@ -13,8 +13,9 @@ const ObjectID = mongodb.ObjectID;
 const contactController = require('../controllers/contactController');
 const { catchErrors } = require('../handlers/errorHandlers'); //{ catchErrors } = object destructuring/es6 ....pulling in entire object into variable
 
+const authHandlers = require('./handlers/jwt');
+
 //mongoose.connect(process.env.LOCAL_DB || process.env.DATABASE);
-//mongoose.connect(process.env.LOCAL_DB);
 mongoose.connect(process.env.MONGODB_URI);//mLab connection string
 //mongoose.connect(process.env.DOCKER_DB);//for Docker development change `localhost`` to `mongodb` in connection string...needs to match name of image container!!!
 mongoose.set('debug', true);
@@ -28,14 +29,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 
-
-
-
-
- router.use(bodyParser.json());
-
-
-
+router.use(bodyParser.json());
 
 
 function handleError(res, reason, message, code) {
@@ -51,9 +45,6 @@ router.get('/', (req, res) => {
 });
 
 
-
-//router.get('/contact', catchErrors(contactController.getContacts));
-
  // GET ALL contacts
 router.get('/contact', (req, res, next) => {
     Contact.find((err, contacts) => (err) ? next(err) : res.json(contacts));
@@ -67,16 +58,19 @@ router.get('/contact/:id', (req, res, next) => {
 
 // SAVE A contact
 router.post('/contact', (req, res, next) => {
+// router.post('/contact', authHandlers.jwtCheck, authHandlers.adminCheck, (req, res, next) => {
     Contact.create(req.body, (err, post) => (err) ? next(err) : res.json(post));
 });
 
 // UPDATE Contact
 router.put('/contact/:id', (req, res, next) => {
+// router.put('/contact/:id', authHandlers.jwtCheck, authHandlers.adminCheck, (req, res, next) => {
     Contact.findByIdAndUpdate(req.params.id, req.body, (err, post) => (err) ? next(err) : res.json(post));
 });
 
 // DELETE A Contact
 router.delete('/contact/:id', (req, res, next) => {
+// router.delete('/contact/:id', authHandlers.jwtCheck, authHandlers.adminCheck, (req, res, next) => {
     Contact.findByIdAndRemove(req.params.id, req.body, (err, post) => (err) ? next(err) : res.json(post));
 });
 

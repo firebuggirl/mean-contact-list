@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactCreateComponent } from './contact-create/contact-create.component';
-import { AuthGuard } from "../guard/auth.guard";
+import { AuthGuard } from '../auth/auth.guard';
+import { AdminGuard } from '../auth/admin.guard';
 
 const routes: Routes = [
     {
       path: '',
-      component: ContactCreateComponent, canActivate: [AuthGuard]
+      component: ContactCreateComponent
+      // canActivate: [
+      //   AuthGuard,
+      //   AdminGuard
+      // ]
     }
   ];
 

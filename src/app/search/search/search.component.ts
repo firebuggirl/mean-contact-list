@@ -25,14 +25,13 @@ export class SearchComponent implements OnInit {
 
   public isCollapsed = true;
 
-constructor(public auth: AuthService,
+constructor(private auth: AuthService,
             public http: HttpClient,
             private contactService: ContactService,
             private router: Router,
             private route: ActivatedRoute
             ) {
 
-   auth.handleAuthentication();
  }
 
 // Push a search term into the observable stream.
@@ -55,10 +54,6 @@ ngOnInit() {
 
 );
 
-
-
-
- //this.getContactDetails(this.route.snapshot.params['id']);
 
 
 }

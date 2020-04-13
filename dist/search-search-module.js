@@ -26,7 +26,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search/search.component */ "./src/app/search/search/search.component.ts");
-/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../guard/auth.guard */ "./src/app/guard/auth.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -39,11 +38,10 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
-
 var routes = [
     {
         path: '',
-        component: _search_search_component__WEBPACK_IMPORTED_MODULE_2__["SearchComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]]
+        component: _search_search_component__WEBPACK_IMPORTED_MODULE_2__["SearchComponent"]
     }
 ];
 var SearchRoutingModule = /** @class */ (function () {
@@ -117,7 +115,7 @@ var SearchModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".search-result {\n\tlist-style-type: none;\n\tmargin-top: 3rem;\n\ttext-align: center;\n\n}\n\n@media screen and (max-width: 500px){\n\t#searchUL{\n\t\twidth:80vw;\n\t}\n}\n\n#search-box{\n  border-radius: 6px;\n  height: 50px;\n}\n\n#searchUL{\n\tdisplay: flex;\n\tjustify-content: center;\n}\n\nli a{\n  color: beige;\n  font-size: 30px;\n\n}\n\ninput[type=text] {\n    border: 2px solid red;\n    padding: 12px 20px;\n    margin: 8px 0;\n    box-sizing: border-box;\n\t\tcolor: #7b0101;\n}\n\ninput[type=text]:focus {\n    background-color: #960f03;\n\t\tborder: 3px solid #ded9c9;\n\t\tcolor: beige;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2VhcmNoL3NlYXJjaC9zZWFyY2guY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLHFCQUFxQjtDQUNyQixnQkFBZ0I7Q0FDaEIsa0JBQWtCOztBQUVuQjs7QUFFQTtDQUNDO0VBQ0MsVUFBVTtDQUNYO0FBQ0Q7O0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtBQUNkOztBQUNBO0NBQ0MsYUFBYTtDQUNiLHVCQUF1QjtBQUN4Qjs7QUFHQTtFQUNFLFlBQVk7RUFDWixlQUFlOztBQUVqQjs7QUFFQTtJQUNJLHFCQUFxQjtJQUNyQixrQkFBa0I7SUFDbEIsYUFBYTtJQUNiLHNCQUFzQjtFQUN4QixjQUFjO0FBQ2hCOztBQUVBO0lBQ0kseUJBQXlCO0VBQzNCLHlCQUF5QjtFQUN6QixZQUFZO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9zZWFyY2gvc2VhcmNoL3NlYXJjaC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNlYXJjaC1yZXN1bHQge1xuXHRsaXN0LXN0eWxlLXR5cGU6IG5vbmU7XG5cdG1hcmdpbi10b3A6IDNyZW07XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1MDBweCl7XG5cdCNzZWFyY2hVTHtcblx0XHR3aWR0aDo4MHZ3O1xuXHR9XG59XG4jc2VhcmNoLWJveHtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xuICBoZWlnaHQ6IDUwcHg7XG59XG4jc2VhcmNoVUx7XG5cdGRpc3BsYXk6IGZsZXg7XG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xufVxuXG5cbmxpIGF7XG4gIGNvbG9yOiBiZWlnZTtcbiAgZm9udC1zaXplOiAzMHB4O1xuXG59XG5cbmlucHV0W3R5cGU9dGV4dF0ge1xuICAgIGJvcmRlcjogMnB4IHNvbGlkIHJlZDtcbiAgICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gICAgbWFyZ2luOiA4cHggMDtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuXHRcdGNvbG9yOiAjN2IwMTAxO1xufVxuXG5pbnB1dFt0eXBlPXRleHRdOmZvY3VzIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjOTYwZjAzO1xuXHRcdGJvcmRlcjogM3B4IHNvbGlkICNkZWQ5Yzk7XG5cdFx0Y29sb3I6IGJlaWdlO1xufVxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".search-result {\n\tlist-style-type: none;\n\tmargin-top: 3rem;\n\ttext-align: center;\n\n}\n\n@media screen and (max-width: 500px){\n\t#searchUL{\n\t\twidth:80vw;\n\t}\n}\n\n#search-box{\n  border-radius: 6px;\n  height: 50px;\n}\n\n#searchUL{\n\tdisplay: -webkit-box;\n\tdisplay: flex;\n\t-webkit-box-pack: center;\n\t        justify-content: center;\n}\n\nli a{\n  color: beige;\n  font-size: 30px;\n\n}\n\ninput[type=text] {\n    border: 2px solid red;\n    padding: 12px 20px;\n    margin: 8px 0;\n    box-sizing: border-box;\n\t\tcolor: #7b0101;\n}\n\ninput[type=text]:focus {\n    background-color: #960f03;\n\t\tborder: 3px solid #ded9c9;\n\t\tcolor: beige;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2VhcmNoL3NlYXJjaC9zZWFyY2guY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLHFCQUFxQjtDQUNyQixnQkFBZ0I7Q0FDaEIsa0JBQWtCOztBQUVuQjs7QUFFQTtDQUNDO0VBQ0MsVUFBVTtDQUNYO0FBQ0Q7O0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtBQUNkOztBQUNBO0NBQ0Msb0JBQWE7Q0FBYixhQUFhO0NBQ2Isd0JBQXVCO1NBQXZCLHVCQUF1QjtBQUN4Qjs7QUFHQTtFQUNFLFlBQVk7RUFDWixlQUFlOztBQUVqQjs7QUFFQTtJQUNJLHFCQUFxQjtJQUNyQixrQkFBa0I7SUFDbEIsYUFBYTtJQUNiLHNCQUFzQjtFQUN4QixjQUFjO0FBQ2hCOztBQUVBO0lBQ0kseUJBQXlCO0VBQzNCLHlCQUF5QjtFQUN6QixZQUFZO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9zZWFyY2gvc2VhcmNoL3NlYXJjaC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNlYXJjaC1yZXN1bHQge1xuXHRsaXN0LXN0eWxlLXR5cGU6IG5vbmU7XG5cdG1hcmdpbi10b3A6IDNyZW07XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1MDBweCl7XG5cdCNzZWFyY2hVTHtcblx0XHR3aWR0aDo4MHZ3O1xuXHR9XG59XG4jc2VhcmNoLWJveHtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xuICBoZWlnaHQ6IDUwcHg7XG59XG4jc2VhcmNoVUx7XG5cdGRpc3BsYXk6IGZsZXg7XG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xufVxuXG5cbmxpIGF7XG4gIGNvbG9yOiBiZWlnZTtcbiAgZm9udC1zaXplOiAzMHB4O1xuXG59XG5cbmlucHV0W3R5cGU9dGV4dF0ge1xuICAgIGJvcmRlcjogMnB4IHNvbGlkIHJlZDtcbiAgICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gICAgbWFyZ2luOiA4cHggMDtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuXHRcdGNvbG9yOiAjN2IwMTAxO1xufVxuXG5pbnB1dFt0eXBlPXRleHRdOmZvY3VzIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjOTYwZjAzO1xuXHRcdGJvcmRlcjogM3B4IHNvbGlkICNkZWQ5Yzk7XG5cdFx0Y29sb3I6IGJlaWdlO1xufVxuIl19 */");
 
 /***/ }),
 
@@ -166,7 +164,6 @@ var SearchComponent = /** @class */ (function () {
         this.route = route;
         this.searchTerms = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.isCollapsed = true;
-        auth.handleAuthentication();
     }
     // Push a search term into the observable stream.
     SearchComponent.prototype.search = function (term) {
@@ -181,7 +178,6 @@ var SearchComponent = /** @class */ (function () {
         Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["distinctUntilChanged"])(), 
         // switch to new search observable each time the term changes
         Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(function (term) { return _this.contactService.searchContacts(term); }));
-        //this.getContactDetails(this.route.snapshot.params['id']);
     };
     SearchComponent.ctorParameters = function () { return [
         { type: _auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"] },

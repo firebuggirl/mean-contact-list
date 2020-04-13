@@ -26,7 +26,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact-edit/contact-edit.component */ "./src/app/contact-edit/contact-edit/contact-edit.component.ts");
-/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../guard/auth.guard */ "./src/app/guard/auth.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -39,11 +38,10 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
-
 var routes = [
     {
         path: '',
-        component: _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_2__["ContactEditComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]]
+        component: _contact_edit_contact_edit_component__WEBPACK_IMPORTED_MODULE_2__["ContactEditComponent"]
     }
 ];
 var ContactEditRoutingModule = /** @class */ (function () {
@@ -169,7 +167,9 @@ var ContactEditComponent = /** @class */ (function () {
             selector: 'app-contact-edit',
             template: __importDefault(__webpack_require__(/*! raw-loader!./contact-edit.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/contact-edit/contact-edit/contact-edit.component.html")).default
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _contact_service__WEBPACK_IMPORTED_MODULE_2__["ContactService"]])
     ], ContactEditComponent);
     return ContactEditComponent;
 }());

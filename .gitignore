@@ -1,7 +1,9 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+.env
 variables.env
 variables.env.now
+/src/app/auth/auth.config.ts
 
 # compiled output
 

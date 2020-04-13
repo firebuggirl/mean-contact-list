@@ -26,7 +26,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _contact_detail_contact_detail_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact-detail/contact-detail.component */ "./src/app/contact-detail/contact-detail/contact-detail.component.ts");
-/* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../guard/auth.guard */ "./src/app/guard/auth.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -39,11 +38,11 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
-
 var routes = [
     {
         path: '',
-        component: _contact_detail_contact_detail_component__WEBPACK_IMPORTED_MODULE_2__["ContactDetailComponent"], canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]]
+        //component: ContactDetailComponent, canActivate: [AuthGuard, AdminGuard]
+        component: _contact_detail_contact_detail_component__WEBPACK_IMPORTED_MODULE_2__["ContactDetailComponent"]
     }
 ];
 var ContactDetailRoutingModule = /** @class */ (function () {
@@ -157,6 +156,7 @@ var ContactDetailComponent = /** @class */ (function () {
     ContactDetailComponent.prototype.deleteContact = function (id) {
         var _this = this;
         this.contactService.deleteContact(id)
+            // .subscribe((res: void) => { this.router.navigate(['/contacts']); }, (err) => console.log(err));
             .subscribe(function (res) { _this.router.navigate(['/contacts']); }, function (err) { return console.log(err); });
     };
     ContactDetailComponent.ctorParameters = function () { return [

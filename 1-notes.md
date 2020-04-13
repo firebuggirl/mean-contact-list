@@ -1,31 +1,26 @@
 ## Load Sample Data
 
-    - In another project/directory:
+  - In another project/directory:
 
-        - Generate Mock JSON data with `JSON-server`, `faker.js` and `lodash`
+      - Generate Mock JSON data with `JSON-server`, `faker.js` and `lodash`
 
-        - https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server
+      - https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server
 
         http://marak.github.io/faker.js/index.html
 
-    - ` npm run sample `
+  - ` npm run sample `
 
 ## Delete Sample Data
 
-    - ` npm run blowitallaway `
+  - ` npm run blowitallaway `
 
 ## Validate JSON
 
     https://jsonlint.com/
 
-
-
-
-
-
 ## To do:
 
-    - Add search functionality
+  - Add search functionality
 
         ` ng g c contact-search `
 

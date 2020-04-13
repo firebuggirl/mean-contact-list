@@ -25,7 +25,8 @@ export class ContactDetailComponent implements OnInit {
 
   deleteContact(id: string) {
     this.contactService.deleteContact(id)
-      .subscribe((res: void) => { this.router.navigate(['/contacts']); }, (err) => console.log(err));
+      // .subscribe((res: void) => { this.router.navigate(['/contacts']); }, (err) => console.log(err));
+      .subscribe((res: any) => { this.router.navigate(['/contacts']); }, (err) => console.log(err));
   }
 
 }

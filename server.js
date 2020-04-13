@@ -1,16 +1,15 @@
-
+require('dotenv').config({ path: __dirname + 'variables.env' });
 const express = require("express");
 const helmet = require('helmet');//initiate security headers
 const app = express();
 const jwt = require('express-jwt');
-const jwtAuthz = require('express-jwt-authz');
 const jwksRsa = require('jwks-rsa');
 const cors = require('cors');
 
 const angular = require('./routes/angular');
 const api = require('./routes/api');
-//const helpers = require('./helpers');
-require('dotenv').config();
+
+
 
 const mongoose = require('mongoose');
 
@@ -27,13 +26,6 @@ app.use('/', angular);
 // Route for APIs go here
 app.use('/api', api);
 
-// app.use((req, res, next) => {
-//   res.locals.h = helpers;
-//   res.locals.contact = req.contact || null;
-//   res.locals.currentContact = req.session.contactId;
-//
-//   next();
-// });
 
 // manually modify middleware to check for Googlebot by their user agent directly
 // https://prerender.io/documentation/google-support
@@ -59,8 +51,8 @@ app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
 // }));
 
 
-if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
-  throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file';
+if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_API_AUDIENCE) {
+  throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_API_AUDIENCE in your .env file';
 }
 
 app.use(cors());
@@ -75,16 +67,24 @@ const checkJwt = jwt({
   }),
 
   // Validate the audience and the issuer.
-  audience: process.env.AUTH0_AUDIENCE,
+  audience: process.env.AUTH0_API_AUDIENCE,
   issuer: `https://${process.env.AUTH0_DOMAIN}/`,
   algorithms: ['RS256']
 });
 
-const checkScopes = jwtAuthz(['read:messages']);
+const adminCheck = (req, res, next) => {
+  const roles = req.user[process.env.NAMESPACE] || [];
+  if (roles.indexOf('admin') > -1) {
+    next();
+  } else {
+    res.status(401).send({message: 'Not authorized for admin access'});
+  }
+}
+
+// const checkScopes = jwtAuthz(['read:messages']);
 
 // Create link to Angular build directory
 const distDir = __dirname + "/dist/";
-//var distDir = __dirname + "/src/";
 app.use(express.static(distDir));
 app.use(express.static(distDir));
 
@@ -97,19 +97,6 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
 
-
-app.get('/api/public', function(req, res) {
-  res.json({
-    message: "Hello from a public endpoint! You don't need to be authenticated to see this."
-  });
-});
-
-app.get('/api/private', checkJwt, checkScopes, function(req, res) {
-  res.json({
-    message: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this.'
-  });
-});
-//
 // CONTACTS API ROUTES BELOW
 
 // Generic error handler used by all endpoints.
@@ -123,7 +110,7 @@ function handleError(res, reason, message, code) {
 // node by default doesn't handle SIGINT/SIGTERM
 // docker containers use SIGINT and SIGTERM to properly exit
 //
-// signals also aren't handeled by npm:
+// signals also aren't handled by npm:
 // https://github.com/npm/npm/issues/4603
 // https://github.com/npm/npm/pull/10868
 // https://github.com/RisingStack/kubernetes-graceful-shutdown-example/blob/master/src/index.js
@@ -153,3 +140,10 @@ function shutdown() {
 		process.exit();
   })
 }
+
+
+
+
+
+
+

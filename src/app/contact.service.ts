@@ -1,20 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Contact } from './models/Contact';
 import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
+import { ENV } from './core/env.config';
+import { AuthService } from './auth/auth.service';
 
-
+import { throwError as ObservableThrowError } from 'rxjs';
 
 @Injectable()
 export class ContactService {
 
-  private contactUrl = 'api/contact';// URL to web api
-  // private contactsUrl = 'api/contacts';  // URL to web api
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService,
+    private auth: AuthService
+    ) { }
 
-  constructor(private http: HttpClient, private messageService: MessageService ) { }
-
+  // set an Auth header using access token stored in local storage
+  // from auth service we created + return necessary Auth
+  // value w/ currently stored access token
+  // token may change if authentication is silently renewed during a session
+  private get _authHeader(): string {
+    return `Bearer ${this.auth.accessToken}`;
+  }
 
 
 
@@ -24,30 +34,65 @@ export class ContactService {
   // }
 
   getPaginatedContacts(): Observable<Contact[]> {
-    return this.http.get<Contact[]>('api/contact');
+    // return this.http.get<Contact[]>('api/contact');
+    return this.http.get<Contact[]>(`${ENV.BASE_API}contact`);
   }
 
   // GET A Contact
   getContact(id: string): Observable<Contact> {
-    return this.http.get<Contact>(`api/contact/${id}`);
+    return this.http.get<Contact>(`${ENV.BASE_API}contact/${id}`);
   }
 
 
 
   // SAVE A Contact
+  // insertContact(contact: Contact): Observable<Contact> {
+  //   return this.http.post<Contact>('api/contact', contact);
+  // }
+
+  // Create a new contact (admin only)
   insertContact(contact: Contact): Observable<Contact> {
-    return this.http.post<Contact>('api/contact', contact);
-  }
+  return this.http
+    .post<Contact>(`${ENV.BASE_API}contact`, contact, {
+      headers: new HttpHeaders().set('Authorization', this._authHeader)
+    })
+    .pipe(
+      catchError((error) => this._handleJWTError(error))
+    );
+}
 
   // UPDATE A Contact
   // void => a Typescript return type => the method does not return a value
-  updateContact(id: string, contact: Contact): Observable<void> {
-    return this.http.put<void>(`api/contact/${id}`, contact);
+  // updateContact(id: string, contact: Contact): Observable<void> {
+  //   return this.http.put<void>(`api/contact/${id}`, contact);
+  // }
+
+  // UPDATE A Contact (login required)
+  // takes the ID of the Contact being edited + an object of type Contact w/ updated data
+  updateContact(id: string, contact: Contact): Observable<Contact> {
+    return this.http
+      .put(`${ENV.BASE_API}contact/${id}`, contact, {
+        headers: new HttpHeaders().set('Authorization', this._authHeader)
+      })
+      .pipe(
+        catchError((error) => this._handleJWTError(error))
+      );
   }
 
   // DELETE A Contact
-  deleteContact(id: string): Observable<void> {
-    return this.http.delete<void>(`api/contact/${id}`);
+  // deleteContact(id: string): Observable<void> {
+  //   return this.http.delete<void>(`api/contact/${id}`);
+  // }
+
+  // DELETE existing event and all associated RSVPs (admin only)
+  deleteContact(id: string): Observable<any> {
+    return this.http
+      .delete(`${ENV.BASE_API}contact/${id}`, {
+        headers: new HttpHeaders().set('Authorization', this._authHeader)
+      })
+      .pipe(
+        catchError((error) => this._handleJWTError(error))
+      );
   }
 
 
@@ -59,7 +104,7 @@ searchContacts(term: string): Observable<Contact[]> {
   const options = term ?
    { params: new HttpParams().set('name', term) } : {};
 
-  return this.http.get<Contact[]>(`api/search/`, options)
+  return this.http.get<Contact[]>(`${ENV.BASE_API}search/`, options)
     .pipe(
       catchError(this.handleError<Contact[]>('searchContactes', []))
     );
@@ -86,6 +131,15 @@ searchContacts(term: string): Observable<Contact[]> {
     /** Log a ContactService message with the MessageService */
     private log(message: string) {
       this.messageService.add('ContactService: ' + message);
+    }
+
+
+    private _handleJWTError(err: HttpErrorResponse | any): Observable<any> {
+      const errorMsg = err.message || 'Error: Unable to complete request.';
+      if (err.message && err.message.indexOf('No JWT present') > -1) {
+        this.auth.login();
+      }
+      return ObservableThrowError(errorMsg);
     }
 
 }
