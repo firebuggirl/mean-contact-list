@@ -44,7 +44,7 @@
     "jquery": "^3.4.1",
     "jwks-rsa": "^1.5.1",
     "mongodb": "^3.2.7",
-    "mongoose": "^5.8.3",
+    "mongoose": "^5.9.9",
     "ng2-meta": "^4.0.0",
     "ngx-pagination": "^3.3.1",
     "popper.js": "^1.15.0",
