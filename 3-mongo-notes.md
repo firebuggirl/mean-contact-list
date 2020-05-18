@@ -1,46 +1,51 @@
-## Enable Auth locally
+# Enable Auth locally
 
-      ` mongod --port 27017  `
+  `mongod --port 27017`
 
-      ` mongo `
+  `mongo`
 
-      ` use admin `
+  `use admin`
 
-      `  db.createUser(
+  ```js
+        db.createUser(
             {
               user: "myUserAdmin",
               pwd: "password",
               roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
             }
-          ) `
+          ) 
+    ```
 
 
+- Disconnect from mongo shell
 
-    - Disconnect the mongo shell.
+- restart:
 
-    - restart:
+    `mongod --auth`
 
-    ` mongod --auth  `
+    ```js
+    mongo -u "myUserAdmin" -p "password" --authenticationDatabase "admin"
+    ```
 
-    ` mongo -u "myUserAdmin" -p "password" --authenticationDatabase "admin" `
 
+    ```js
+     use admin
+     db.auth("myUserAdmin", "password" ) 
+    ```
 
-      ` use admin
-        db.auth("myUserAdmin", "password" ) `
+- Change password:
 
-        - Change password:
+  `db.changeUserPassword("myUserAdmin", "<new-password>")`
 
-        ` db.changeUserPassword("myUserAdmin", "<new-password>") `
+    * NOTE:
 
-        * NOTE:
+       - By default, db.changeUserPassword() sends all specified data to the MongoDB instance in cleartext. Use TLS transport encryption to protect communications between clients and the server
 
-             - By default, db.changeUserPassword() sends all specified data to the MongoDB instance in cleartext. Use TLS transport encryption to protect communications between clients and the server
+          ...see Configure mongod and mongos for TLS/SSL
 
-              ...see Configure mongod and mongos for TLS/SSL
+          https://docs.mongodb.com/manual/tutorial/configure-ssl/
 
-              https://docs.mongodb.com/manual/tutorial/configure-ssl/
-
-             MongoDB does not store the password in cleartext. ..only vulnerable in transit.. and only if TLS transport is not enabled.
+         MongoDB does not store the password in cleartext. ..only vulnerable in transit.. and only if TLS transport is not enabled.
 
 
 

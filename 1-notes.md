@@ -1,6 +1,6 @@
-## Load Sample Data
+# Load Sample Data
 
-  - In another project/directory:
+- In another project/directory:
 
       - Generate Mock JSON data with `JSON-server`, `faker.js` and `lodash`
 
@@ -8,11 +8,11 @@
 
         http://marak.github.io/faker.js/index.html
 
-  - ` npm run sample `
+  - `npm run sample`
 
 ## Delete Sample Data
 
-  - ` npm run blowitallaway `
+- `npm run blowitallaway`
 
 ## Validate JSON
 
@@ -20,22 +20,21 @@
 
 ## To do:
 
-  - Add search functionality
+- Add search functionality
 
-        ` ng g c contact-search `
+    `ng g c contact-search`
 
-    - Add authentication with Auth0
+- Add authentication with Auth0
 
-        ` npm i auth0-js --save `
+    `npm i auth0-js --save`
 
-        ` ng g guard guard/auth --module app.module ``
+    `ng g guard guard/auth --module app.module`
 
-        ` ng g s auth/auth `
+    `ng g s auth/auth`
 
-        ` ng g c login `
+    `ng g c login`
 
-        ` ng g c callback `
-
+    `ng g c callback`
 
 ## Pagination
 
