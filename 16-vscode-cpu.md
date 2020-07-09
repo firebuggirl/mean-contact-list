@@ -4,6 +4,6 @@
 
 - Code Helper taking using up waaaaay too much CPU...
 
-- ps aux | grep <PID>
+- `ps aux | grep <PID>`
 
 - shut down/disable offending extension....`TS Lint` => 7-9-2020
