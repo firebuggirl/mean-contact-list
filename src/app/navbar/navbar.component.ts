@@ -15,6 +15,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit{
 
+  isCollapsed: boolean;
+
    constructor(
     private router: Router,
     public auth: AuthService,

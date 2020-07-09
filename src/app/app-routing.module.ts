@@ -16,19 +16,19 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    loadChildren: './search/search.module#SearchModule'
+    loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
   },
   {
     path: 'contacts',
-    loadChildren: './contact/contact.module#ContactModule'
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
   },
   {
     path: 'contact-details/:id',
-    loadChildren: './contact-detail/contact-detail.module#ContactDetailModule'
+    loadChildren: () => import('./contact-detail/contact-detail.module').then(m => m.ContactDetailModule)
   },
   {
     path: 'contact-create',
-    loadChildren: './contact-create/contact-create.module#ContactCreateModule',
+    loadChildren: () => import('./contact-create/contact-create.module').then(m => m.ContactCreateModule),
     canActivate: [
       AuthGuard,
       AdminGuard
@@ -36,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'contact-edit/:id',
-    loadChildren: './contact-edit/contact-edit.module#ContactEditModule',
+    loadChildren: () => import('./contact-edit/contact-edit.module').then(m => m.ContactEditModule),
     canActivate: [
       AuthGuard,
       AdminGuard

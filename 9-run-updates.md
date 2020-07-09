@@ -16,7 +16,7 @@
 
 `ng build`
 
-# Update to Angular 9
+## Update to Angular 9
 
 https://www.youtube.com/watch?v=TcdhAxDWWxM&feature=youtu.be&utm_source=email-sendgrid&utm_term=13952972&utm_medium=833442&utm_content=educational&utm_campaign=2020-02-06
 
@@ -64,8 +64,7 @@ https://update.angular.io/
 
   - remove `false`
 
-
-  ```js
+   ```js
    @ViewChild()
    ```
 
@@ -85,4 +84,35 @@ https://update.angular.io/
 
 ```json
 "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
-````//Breaks deploy to Heroku..actually, might not have been the case...had a space in beginning of Procfile
+```//Breaks deploy to Heroku..actually, might not have been the case...had a space in beginning of Procfile
+
+## Upgrade to Angular 10 => 7/9/2020
+
+- `Bug` =>  Repository is not clean. Please commit or stash any changes before updating.
+
+ `ng update @angular/cli @angular/core --allow-dirty`//fails
+
+- incompatible dependencies...
+
+ `npm uninstall @angular/http --save`
+
+ `ng update @angular/cli @angular/core --allow-dirty --force`
+
+- New bug upon updating:
+
+ - Uncaught Error: It looks like your application or one of its dependencies is using i18n. Angular 9 introduced a global `$localize()` function that needs to be loaded.
+
+ - run `ng add @angular/localize` from the Angular CLI
+
+### updates in v10:
+
+https://blog.angulartraining.com/whats-new-in-angular-10-be249ed2ac2
+
+- TypeScript 3.9, TSLib 2.0, & TS Lint v6
+
+- `date range picker` in Angular Material 10
+
+- Warnings when using CommonJS imports as they can result in both larger and slower applications.
+
+- Optional stricter settings => can create new projects with a strict flag w/ stricter listing rules, bundle sizes => more efficient tree-shaking (ie., dead code elimination).
+
