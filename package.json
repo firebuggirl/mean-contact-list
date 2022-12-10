@@ -38,7 +38,7 @@
     "cors": "^2.8.5",
     "cryptiles": ">=4.1.2",
     "dotenv": "^5.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-jwt": "^5.3.1",
     "helmet": "^3.21.2",
     "jquery": "^3.5.1",
